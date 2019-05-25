@@ -1,0 +1,735 @@
+*{
+    box-sizing: border-box;
+}
+body, html{
+    height: 100%;
+    margin: 0%;
+}
+#accueil{
+    background-image: url(../images/image_fond_mw2.jpg);
+    /* image ne s' applique qu' au menu zappa, pas aux autres pages*/
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+#lyrics{
+    background-image: url(../images/image_fond_mw2.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    text-align: center ;
+    margin-top: 20px;
+}
+audio{
+    width: 150px;
+    margin: 0 50px 0 50px;
+}
+p1{
+    font: 12pt kurt ;
+    color: #993300 ;
+}
+p1 a{
+    font: 12pt kurt ;
+    color: #993300 ;
+    text-decoration: none
+}
+p2{
+    font: 12pt kurt ;
+    color: #c75217 ;
+}
+p3{
+    font: 10pt kurt ;
+    color: #9a4115 ;
+}
+.container-fluid h1 {
+    font: bold 5rem 'satisfy' ;
+    color: purple ;
+    margin-top: 10vh;
+    text-align: center;
+    text-shadow: 2px 2px 5px #9f68af !important;
+}
+.container-fluid .indication{
+  font: 2rem 'satisfy' ;
+  margin-left: 1.8vw;
+  text-align: center;
+  color: purple;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+nav{
+    margin: 50px 0 50px 0;
+    font: 8pt kurt ;
+    color: #993300 ;
+    text-align: center;
+}
+nav a{
+    font: 8pt kurt ;
+    color: #993300 ;
+    text-decoration: none;
+}
+/* *********************************pour la navbar des index interieurs************************************* */
+
+.navbar{
+  background: #000 !important;
+  margin-top: 0;
+  margin-left: 10vw;
+  padding-top: 0;
+  border: 2px solid #9f68af;
+  box-shadow: 2px 2px 10px #9f68af;
+}
+.navbar a, .navbar ul li a{
+  font-family: 'satisfy';
+  color: #efd3f8 !important;
+}
+.navbar a{
+  font-size: 1.6rem;
+}
+.navbar ul li a{
+  font-size: 1.1rem;
+}
+.navbar-toggler{
+  border: 1px solid #efd3f8 !important;
+}
+.nav-item a:active{
+  color: purple !important;
+
+}
+/********************************************** special pour  l' image hover ***********************************/
+/* trouvé sur codepen grace a Sandra Herisson https://codepen.io/tiggr/pen/rOOmye
+adapté le css, notamment avec de la transparence */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.tile-wrap {
+  display: inline-block;
+  position: relative;
+  margin: 3rem;
+  overflow: hidden;
+  border: solid 4px purple;
+  box-shadow: 2px 2px 10px #9a50b1;
+}
+.tile-image {
+  display: block;
+  width: 230px;
+  height: 230px;
+  transition: .7s;
+}
+.tile-wrap:hover .tile-image {
+  transform: scale(1.15);
+  -webkit-filter: grayscale(.7);
+  filter: grayscale(.7);
+}
+.tile-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.4em;
+  text-align: center;
+  font-weight: bold;
+  background: rgba(255, 255, 255, 0.555);
+  color: purple;
+  transition: transform .5s;
+  transform: translateY(110%);
+  box-shadow: 0 -4px 33px rgba(0,0,0,.7);
+}
+.tile-wrap:hover .tile-text {
+  transform: translateY(0);
+}
+.tile-title {
+  font-size: 1.3rem !important;
+  text-align: center;
+  font-family: 'satisfy';
+  font-weight: bold;
+  padding-top: 1rem;
+
+  transform: translateY(100%);
+  transition: transform .5s .15s ease-out;
+}
+.tile-wrap:hover .tile-title {
+  transform: none;
+}
+.tile-description {
+  font-family: 'roboto slab';
+  transform: translateY(100%);
+  transition: transform .5s .3s ease-out;
+}
+.tile-wrap:hover .tile-description {
+  transform: none;
+}
+
+  /* **************************************fin image hover********************************************** */
+
+/* ********************************ancre haut de page*********************************************** */
+  .ancre{
+     position: fixed;
+     bottom: 10rem;
+     right: 2rem;
+     cursor: pointer;
+     border: none;
+     background-color:transparent;
+     font-size: 350%;
+     color: purple;
+     text-shadow: 2px 2px 2px #9f68af !important;
+ }
+ /* *********************************fin de l' ancre***************************************************** */
+
+ .title_tracks{
+   font-family: 'satisfy';
+   font-size: 1.8rem;
+   color: #efd3f8;
+ }
+
+ /* *******************************lecteur JS************************************************** */
+/**
+ * SoundManager 2 + useFlashBlock
+ * ------------------------------
+ * Flash positioning and flashblock / clicktoflash handling
+ */
+
+#sm2-container {
+ /**
+  * where the SM2 flash movie goes. by default, relative container.
+  * set relative or absolute here, and don't touch it later or bad things will happen (see below comments.)
+  */
+ position: absolute;
+ width: 1px;
+ height: 1px;
+ overflow: hidden;
+ /* screw IE 6, just make it display nice */
+ _overflow: hidden;
+}
+
+#sm2-container object,
+#sm2-container embed {
+ /**
+  * the actual SWF movie bit.
+  * important: The SWF needs to be able to be moved off-screen without display: or position: changes.
+  * changing display: or position: or overflow: here or on parent can cause SWF reload or other weird issues after unblock
+  * e.g., SM2 starts but strange errors, no whileplaying() etc.
+  */
+ width: 48px;
+ height: 48px;
+ /* some flash blockers may also respect this rule */
+ max-width: 48px;
+ max-height: 48px;
+}
+
+#sm2-container.swf_timedout {
+ /* expand to show the timed-out SWF content */
+ position: relative;
+ width: 48px;
+ height: 48px;
+}
+
+#sm2-container.swf_timedout,
+#sm2-container.swf_timedout object,
+#sm2-container.swf_timedout embed {
+ /**
+  * when SM2 didn't start normally, time-out case. flash blocked, missing SWF, no flash?
+  * 48px square flash placeholder is typically used by blockers.
+  */
+ min-width: 48px;
+ min-height: 48px;
+}
+
+#sm2-container.swf_unblocked {
+ /* SWF unblocked, or was never blocked to begin with; try to collapse container as much as possible. */
+ width: 1px;
+ height: 1px;
+}
+
+#sm2-container.swf_loaded object,
+#sm2-container.swf_loaded embed,
+#sm2-container.swf_unblocked object,
+#sm2-container.swf_unblocked embed {
+ /* hide flash off-screen (relative to container) when it has loaded OK */
+ left: -9999em;
+ top: -9999em;
+}
+
+#sm2-container.swf_error {
+ /* when there is a fatal error (flash loaded, but SM2 failed) */
+ display: none;
+}
+
+#sm2-container.high_performance,
+#sm2-container.high_performance.swf_timeout {
+ /* "high performance" case: keep on-screen at all times */
+ position: absolute;
+ position: fixed;
+}
+
+#sm2-container.high_performance {
+ overflow: hidden;
+ _top: -9999px; /* IE 6 hax, no position:fixed */
+ _left: -9999px;
+ bottom: 0px;
+ left: 0px;
+ /**
+  * special case: show at first with w/h, hide when unblocked.
+  * might be bad/annoying.
+  * try to stay within ClickToFlash "invisible" limits (so it won't be blocked.)
+  */
+ z-index: 99; /* try to stay on top */
+}
+
+#sm2-container.high_performance.swf_loaded,
+#sm2-container.high_performance.swf_unblocked {
+ z-index: auto;
+}
+
+#sm2-container.high_performance.swf_loaded,
+#sm2-container.high_performance.swf_unblocked,
+#sm2-container.high_performance.swf_unblocked object,
+#sm2-container.high_performance.swf_unblocked embed {
+ /**
+  * 8x8px is required minimum to load in fx/win32 in some cases(?)
+  * 6x6+ good for fast performance, even better when on-screen via position:fixed
+  * also, clickToFlash (Safari <5.1) may auto-load "invisible" SWFs at this size
+  */
+ height: 8px;
+ width: 8px;
+}
+
+#sm2-container.high_performance.swf_loaded {
+ /* stay bottom/left */
+ top: auto;
+ bottom: 0px;
+ left: 0px;
+}
+
+#sm2-container.high_performance.swf_loaded object,
+#sm2-container.high_performance.swf_loaded embed,
+#sm2-container.high_performance.swf_unblocked object,
+#sm2-container.high_performance.swf_unblocked embed {
+ /* high-performance case must stay on-screen */
+ left: auto;
+ top: auto;
+}
+
+#sm2-container.high_performance.swf_timedout {
+ z-index: 99; /* try to stay on top */
+}
+
+
+/* General warning: Beta-ish. Code could be a bit cleaner. */
+
+.ui360, /* entire UI */
+.sm2-360ui { /* canvas container */
+ position:relative;
+}
+
+.ui360,
+.sm2-360ui {
+ min-width:50px; /* should always be at least this. */
+ min-height:50px;
+}
+
+.sm2-360ui {
+ width:50px;
+ height:50px;
+}
+
+.ui360,
+.ui360 * {
+ vertical-align:middle;
+}
+
+.sm2-360ui {
+ position:relative;
+ display:inline-block; /* firefox 3 et al */
+ float:left; /* IE 6+7, firefox 2 needs this, inline-block would work with fx3 and others */
+ *display:inline;
+/*
+ clear:left;
+*/
+}
+
+.sm2-360ui.sm2_playing,
+.sm2-360ui.sm2_paused {
+ /* bump on top when active */
+ z-index:10;
+}
+
+.ui360 a { /* .sm2_link class added to playable links by SM2 */
+ float:left;
+ display:inline;
+ position:relative;
+ color:rgb(247, 173, 173);
+ text-decoration:none;
+ left:3px; /* slight spacing on left UI */
+ top:18px; /* vertical align */
+ text-indent:50px; /* make room for UI at left */
+}
+
+.ui360 a.sm2_link { /* SM2 has now started */
+ text-indent:0px; /* UI now in place. */
+}
+
+.ui360 a,
+.ui360 a:hover,
+.ui360 a:focus {
+ padding:2px;
+ margin-left:-2px;
+ margin-top:-2px;
+}
+
+.ui360 a:hover,
+.ui360 a:focus {
+ background:#eee;
+ border-radius:3px;
+ outline:none;
+}
+
+.ui360 .sm2-canvas {
+ position:absolute;
+ left:0px;
+ top:0px;
+}
+
+.ui360 .sm2-timing {
+ position:absolute;
+ display:block;
+ left:0px;
+ top:0px;
+ width:100%;
+ height:100%;
+ margin:0px;
+ font:11px "helvetica neue",helvetica,monaco,lucida,terminal,monospace;
+ color:#666;
+ text-align:center;
+ line-height:50px;
+}
+
+.ui360 .sm2-timing.alignTweak {
+ text-indent:1px; /* devious center-alignment tweak for Safari (might break things for others.) */
+}
+
+.ui360 .sm2-cover {
+ position:absolute;
+ left:0px;
+ top:0px;
+ width:100%;
+ height:100%;
+ z-index:2;
+ display:none;
+ background-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==); /* old-skool bug: IE 9 won't catch mouse events otherwise. /smash */
+}
+
+.ui360 .sm2-360btn {
+ position:absolute;
+ display:block;
+ top:50%;
+ left:50%;
+/*
+ width:22px;
+ height:22px;
+ margin-left:-11px;
+ margin-top:-11px;
+*/
+ /* by default, cover whole space. make smaller when playing. */
+ width:50px;
+ height:50px;
+ margin-left:-25px;
+ margin-top:-25px;
+ border-radius: 25px;
+ cursor:pointer;
+ z-index:3;
+}
+
+.ui360 .sm2-360data {
+ display:inline-block;
+ font-family:helvetica;
+}
+
+.sm2-inline-block .ui360 .sm2-360btn,
+.ui360 .sm2-360ui.sm2_playing .sm2-360btn,
+.ui360 .sm2-360ui.sm2_paused .sm2-360btn {
+ /* smaller clickable button, in center */
+ width:22px;
+ height:22px;
+ margin-left:-11px;
+ margin-top:-11px;
+}
+
+.ui360 .sm2-360ui.sm2_playing .sm2-cover,
+.ui360 .sm2-360ui.sm2_paused .sm2-cover {
+ display:block;
+}
+
+/* this could be optimized a fair bit. */
+
+.ui360,
+.ui360 .sm2-360btn-default,
+.ui360 .sm2-360ui.sm2_paused .sm2-360btn {
+ background:transparent url(360-button-play.png) no-reoeat;
+ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAABoUlEQVR42sWVu2oCQRhGU/s8gpVYJeQJNkZSbiH4QNuLlQZS21sJayGYaOEFVFDxNiremj9zig2uzk5YQpKFg8PMd75ZZle9E5Ff4e+Ll8tlQuNoPI2vUcCYOdbIxCmm9F5T0YgNMmS/LebSwWdNa7VayXq9ls1mI9vtVna7nQBj5lgjQxYHN7KY3QkiUbDf7+V4PMrpdArBHGtkyOJc3/n1mVaUUl+F5/PZSrABDi4dpmKH3QkixQEHlw5TsccZmsRCoSD1et1ajkuHqdg/HA5GKZPJCOTzeanVasYMLh2mYsXDIGAoDuG6rlSr1WCdBxrcsTIWazgrQiHS6bSRYJ3XDzeq2O/3+9Ltdm9IpVIhstmslEqlUAY36ii8ZrMpjUbjhmQyKeA4jhSLRWMGN+rhOZ1Oh8ANuVxOyuUy40hwo163RK/XeyPQbrdjgYNr/ILAYDB41Gf1wZnFAQfX+iM0HA5fxuPx+2g0Ej22QoYsDq61mGsymTxMp9NX/Sk2yJDFsRZfXpzXbDZ7WiwW3nw+9zUKGDPHGpkL5V//mn7OJyJZApyzeUS5AAAAAElFTkSuQmCC);
+ *background-image: url(360-button-play.png);
+ background-repeat: no-repeat;
+}
+
+.ui360 {
+ /*
+  "fake" button shown before SM2 has started, non-JS/non-SM2 case etc.
+  background image will be removed via JS, in threeSixyPlayer.init()
+ */
+ background-position: 14px 50%;
+ _background:transparent url(360-button-play.gif) no-repeat 14px 50%; /* IE 6-only: special crap GIF */
+}
+
+.ui360 .sm2-360btn-default,
+.ui360 .sm2-360ui.sm2_paused .sm2-360btn {
+ background-position:50% 50%;
+ _background:transparent url(360-button-play.gif) no-repeat 50% 50%; /* IE 6-only: special crap GIF */
+}
+
+.ui360 .sm2-360btn-default,
+.ui360 .sm2-360ui.sm2_paused .sm2-360btn {
+ cursor:pointer;
+}
+
+.ui360 .sm2-360btn-default:hover,
+.ui360 .sm2-360ui.sm2_paused .sm2-360btn:hover {
+ background:transparent url(360-button-play-light.png) no-repeat 50% 50%;
+ _background:transparent url(360-button-play.gif) no-repeat 50% 50%;
+ cursor:pointer;
+}
+
+.ui360 .sm2-360ui.sm2_playing .sm2-360btn:hover,
+.ui360 .sm2-360btn-playing:hover {
+ background:transparent url(360-button-pause-light.png) no-repeat 50% 50%;
+ _background:transparent url(360-button-pause-light.gif) no-repeat 50% 50%;
+ cursor:pointer;
+}
+
+.ui360 .sm2-360ui.sm2_playing .sm2-timing {
+ visibility:visible;
+}
+
+.ui360 .sm2-360ui.sm2_buffering .sm2-timing {
+ visibility:hidden;
+}
+
+.ui360 .sm2-360ui .sm2-timing,
+.ui360 .sm2-360ui .sm2-360btn:hover + .sm2-timing,
+.ui360 .sm2-360ui.sm2_paused .sm2-timing {
+ visibility:hidden;
+}
+
+.ui360 .sm2-360ui.sm2_dragging .sm2-timing,
+.ui360 .sm2-360ui.sm2_dragging .sm2-360btn:hover + .sm2-timing {
+ /* paused + dragging */
+ visibility:visible;
+}
+
+.ui360 .sm2-360ui.sm2_playing .sm2-360btn,
+.ui360 .sm2-360ui.sm2_dragging .sm2-360btn,
+.ui360 .sm2-360ui.sm2_dragging .sm2-360btn:hover,
+.ui360 .sm2-360ui.sm2_dragging .sm2-360btn-playing:hover {
+ /* don't let pause button show on hover when dragging (or paused and dragging) */
+ background:transparent;
+ cursor:auto;
+}
+
+.ui360 .sm2-360ui.sm2_buffering .sm2-360btn,
+.ui360 .sm2-360ui.sm2_buffering .sm2-360btn:hover {
+  background:transparent url(icon_loading_spinner.gif) no-repeat 50% 50%;
+  opacity:0.5;
+  visibility:visible;
+}
+
+/* inline list style */
+
+.sm2-inline-list .ui360,
+.sm2-inline-block .ui360 {
+ position:relative;
+ display:inline-block;
+ float:left;
+ _display:inline;
+ margin-bottom:-15px;
+}
+
+.sm2-inline-list .ui360 {
+ /* inline player: minor tweak, tighten spacing */
+ margin-right:-2px;
+}
+
+.sm2-inline-block .ui360 {
+ margin-right:8px;
+}
+
+.sm2-inline-list .ui360 a {
+ display:none;
+}
+
+/* annotations */
+
+ul.ui360playlist {
+ list-style-type:none;
+}
+
+ul.ui360playlist,
+ul.ui360playlist li {
+ margin:0px;
+ padding:0px;
+}
+
+div.ui360 div.metadata {
+ display:none;
+}
+
+div.ui360 a span.metadata,
+div.ui360 a span.metadata * {
+ /* name of track, note etc. */
+ vertical-align:baseline;
+}
+
+/*
+
+ SoundManager 2: Basic MP3 player CSS
+ ------------------------------------
+
+ Clicks on links to MP3s are intercepted via JS, calls are
+ made to SoundManager to load/play sounds. CSS classes are
+ appended to the link, which are used to highlight the
+ current play state and so on.
+
+ Class names are applied in addition to "sm2_button" base.
+
+ Default:
+
+ sm2_button
+
+ Additional states:
+
+ sm2_playing
+ sm2_paused
+
+ eg.
+
+ <!-- default -->
+ <a href="some.mp3" class="sm2_button">some.mp3</a>
+
+ <!-- playing -->
+ <a href="some.mp3" class="sm2_button sm2_playing">some.mp3</a>
+
+
+ Note you don't require ul.graphic / ul.flat etc. for your use
+ if only using one style on a page. You can just use .sm2_button{}
+ and so on, but isolate the CSS you want.
+
+ Side note: Would do multiple class definitions eg.
+
+ a.sm2_default.sm2_playing{}
+
+ .. except IE 6 has a parsing bug which may break behaviour,
+ applying sm2_playing {} even when the class is set to sm2_default.
+
+
+ If you want to make your own UI from scratch, here is the base:
+
+ Default + hover state, "click to play":
+
+ a.sm2_button {}
+ a.sm2_button:hover {}
+
+ Playing + hover state, "click to pause":
+
+ a.sm2_playing {}
+ a.sm2_playing:hover {}
+
+ Paused + hover state, "click to resume":
+
+ a.sm2_paused {}
+ a.sm2_paused:hover {}
+
+*/
+
+a.sm2_button {
+ position:relative;
+ display:inline-block; /* If you worry about old browser bugs, Firefox 2 might not like this and may need -moz-inline-box instead. :D */
+ width:18px;
+ height:18px;
+ text-indent:-9999px; /* don't show link text */
+ overflow:hidden; /* don't draw inner link text */
+ vertical-align:middle;
+ /* and, a bit of round-ness for the cool browsers. */
+ border-radius:6px;
+ margin-top:-1px; /* vertical align tweak */
+ /* safari 3.1+ fun (/W3 working draft extension, TBD.) */
+ -webkit-transition-property: hover;
+ -webkit-transition: all 0.2s ease-in-out;
+ -moz-transition: all 0.2s ease-in-out 0s; /* firefox 4 (couldn't sort out -moz-transform vs. MozTransform, so, "all" for now) */
+ -o-transition-property: background-color; /* opera 10.5 */
+ -o-transition-duration: 0.15s;
+ /* weird IE 6/7 display fixes, and/or I'm doing it wrong */
+ *text-indent:0px;
+ *line-height:99em;
+ *vertical-align: top;
+}
+
+a.sm2_button:focus {
+ outline:none; /* maybe evil, but don't show the slight border outline on focus. */
+}
+
+a.sm2_button,
+a.sm2_button.sm2_paused:hover {
+ background-color:#3399cc;
+ background-image:url(http://techhouse.org/~dmorris/misc/soundmanager/demo/mp3-player-button/image/arrow-right-white.png);
+ /* where possible, use data: and skip the HTTP request. Fancy-pants. Would use short-hand background: for above, but IE 8 doesn't override background-image. */
+ background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAYAAABmBXS+AAAAbklEQVQY02NgQAL//v1jZMAF/v//vwuIs9HEUBUBTbj4HwIeA3EGVsVAxtn/qOAVUGM8uknIiv4hsV8A5ZKxKfoLVvnvHwifAzLtMKwDSQLBVSBti27dJajkcSD2RJODO3wtkOOMz/tMSJJYAxMA5dmsL0IfubQAAAAASUVORK5CYII=);
+ *background-image:url(http://techhouse.org/~dmorris/misc/soundmanager/demo/mp3-player-button/image/arrow-right-white.gif); /* IE 6+7 don't do DATA: URIs */
+ background-repeat:no-repeat;
+ background-position:5px 50%;
+ *background-position:5px 4px; /* IE 6 again */
+}
+
+a.sm2_button:hover,
+a.sm2_button.sm2_playing,
+a.sm2_button.sm2_playing:hover {
+ background-color:#33cccc;
+}
+
+a.sm2_button.sm2_playing,
+a.sm2_button.sm2_playing:hover {
+ -moz-transform:rotate(90deg);
+ -webkit-transform:rotate(90deg);
+ -ms-transform:rotate(90deg);
+}
+
+a.sm2_button.sm2_paused,
+a.sm2_button.sm2_paused:hover {
+ background-color:#666;
+}
+
+
+p 
+{ 
+  font-family: calibri,verdana; 
+  margin:15px;
+}
+
+p.playertype
+{
+  font-size:110%;
+  font-weight:bold;
+}
+
+a
+{ 
+    text-decoration:none; 
+}
+
+.song
+{
+   font-family:calibri;
+   font-size:100%;   
+   color:black;
+   vertical-align:middle;
+}
+ /* *******************************fin du lecteur JS ****************************************** */

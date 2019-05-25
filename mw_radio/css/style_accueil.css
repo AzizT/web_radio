@@ -1,0 +1,138 @@
+body{
+    background-image: url(../images/image_fond_mw.jpg);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;  
+    font-family: arial;
+    color: #9f68af;
+    font-size: 12px;
+    text-align: center ;
+    margin-top: 20px;
+}
+
+#container{
+    /*background-color: black;*/
+    margin: 0px auto;
+    width: 75%;
+    /*border: 1px solid #9f68af;*/
+    overflow: hidden;
+    /* me sert pour centrer mon image et avoir la bordure extérieure du header AT*/
+    }
+img.responsive_logo{
+    /*besoin de faire une différence avec la img.responsive ci-dessous car je ne veux pas de bordure pour le bandeau*/
+    /*border: 1px solid #9f68af;*/
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    /*centrer mon bandeau avec les deux margin dans le container*/
+    max-width: 99%;
+    /* Si 100%, bordure droite n'apparait pas */
+    height: auto;
+    /* solution pour une image responsive trouvée ici
+    https://openclassrooms.com/forum/sujet/css-responsive-modifier-la-taille-des-images
+    beaucoup moins compliquée et longue que de faire différents formats d' images et demander au navigateur de choisir */
+}
+img.responsive{
+    border: 1px solid #9f68af;
+    margin-top: 20px;/*me permet la séparation nette par rapport aux onglets*/
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    max-width: 99%;
+    /* Si 100%, bordure droite n'apparait pas */
+    height: auto;
+    /* solution pour une image responsive trouvée ici
+    https://openclassrooms.com/forum/sujet/css-responsive-modifier-la-taille-des-images
+    beaucoup moins compliquée et longue que de faire différents formats d' images et demander au navigateur de choisir */
+}
+
+/* Menu Déroulant sans float CSS3 et centré , GCyrillus, corrigé par Franck Chenu */
+
+/* Base CSS sans float et centrage du menu */
+
+ul#menu {
+	display:table; /* contexte de formatage : alternative = inline-block */
+	margin:auto;   /* centrage pour élément similaire a block, si inline-block, alors text-align:center; sur le parent  */
+	padding:0;		/* reset marge interne */
+    border-spacing: 30px 5px; /* crée un espace entre les deux bordures AT*/
+}
+
+#menu li {
+	display:table-cell; /* alternative à float avec contexte de formatage */
+}
+
+#menu ul {
+	padding:0;			 	/* reset marge internes */
+	position:absolute;		/* extraction du flux , peut nécessité un z-index selon contexte des styles */
+}
+
+#menu ul li {
+	display:block;			/* retour a un comportement de type block */
+}
+
+/* gestion des menus */
+
+/* on cache au repos les menus */
+#menu ul  {
+	left:-999px;			/* on éjecte le menu de l'écran sans le rendre totalement inaccessible */
+}
+
+/* on affiche le menu au survol de son ITEM parent */
+#menu li:hover ul ,#menu-gc li:focus ul{
+	left:auto;				/* on laisse le navigateur faire 
+	si pas de positionnement relatif impliqué dans un parent  */
+}
+
+/* un peu de mise en forme */
+#menu  {
+	text-align:center;
+}
+
+#menu  li {
+    border: #9f68af solid 1px;
+	width: 5vw;  /* choisi cette valeur après plusieurs tests */
+    line-height : 2vh; /* on définit une hauteur pour chaque élément */
+	background-color: #0b0011;/* BG onglet au repos*/
+	
+}
+/* Attributs pour la texte obligatoires, a séparer des attributs de l' onglet ( dessus) Correction Franck*/
+#menu li a {
+	text-decoration: none;
+	color: #9f68af;/* couleur font onglet au repos*/
+}
+
+/* attributs " au passage " pour l' onglet*/
+#menu li:hover {
+	background-color: #212020;
+}
+
+/* Attributs " au passage " pour le texte cette fois. Comme au-dessus, sinon, la font-color n' est pas prise en compte AT */
+#menu li a:hover {
+    color: #d592e8;
+}
+
+/* **********************début des parametres pour la barre de recherche************************************ */
+
+.recherche{
+    line-height : 2vh;
+    width: 8vw;
+    /* margin-left: 5vw; */
+    border: #9f68af solid 2px;
+}
+.soumettre{
+    line-height : 2.2vh;
+    width: 2vw;
+    background-color: #e5b8f3;
+    border: #9f68af solid 2px;
+    border-radius: 20%;
+}
+
+/* **************************************fin de la barre de recherche******************************************* */
+
+#piedPage{
+    margin: 0px auto;
+    clear: both;
+    /* supprimé le 1280px ci dessous pour avoir un width en % comme ailleurs. Pas de différence visuelle générale, mais pour avoir du responsive partout*/
+    width: 75%;
+    padding: 5px;
+}
