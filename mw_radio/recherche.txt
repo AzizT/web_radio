@@ -3,20 +3,24 @@ stevie wonder do i do
 
 placebo pure morning
 
-http://localhost/mw_radio/mw_radio/50_60_tracks/mp3/....mp3
-http://localhost/mw_radio/mw_radio/50_60_tracks/img_lp/....jpg
+cowboy junkies sweet jane
 
-http://localhost/mw_radio/mw_radio/70_tracks/mp3/....mp3
-http://localhost/mw_radio/mw_radio/70_tracks/img_lp/....jpg
+http://localhost/web_radio/mw_radio/mp3/....mp3
 
-http://localhost/mw_radio/mw_radio/80_tracks/mp3/....mp3
-http://localhost/mw_radio/mw_radio/80_tracks/img_lp/....jpg
+http://localhost/web_radio/mw_radio/50_60_tracks/mp3/....mp3
+http://localhost/web_radio/mw_radio/50_60_tracks/img_lp/....jpg
 
-http://localhost/mw_radio/mw_radio/90_tracks/mp3/....mp3
-http://localhost/mw_radio/mw_radio/90_tracks/img_lp/....jpg
+http://localhost/web_radio/mw_radio/70_tracks/mp3/....mp3
+http://localhost/web_radio/mw_radio/70_tracks/img_lp/....jpg
 
-http://localhost/mw_radio/mw_radio/00_tracks/mp3/....mp3
-http://localhost/mw_radio/mw_radio/00_tracks/img_lp/....jpg
+http://localhost/web_radio/mw_radio/80_tracks/mp3/....mp3
+http://localhost/web_radio/mw_radio/80_tracks/img_lp/....jpg
 
-http://localhost/mw_radio/mw_radio/10_tracks/mp3/....mp3
-http://localhost/mw_radio/mw_radio/10_tracks/img_lp/....jpg
+http://localhost/web_radio/mw_radio/90_tracks/mp3/....mp3
+http://localhost/web_radio/mw_radio/90_tracks/img_lp/....jpg
+
+http://localhost/web_radio/mw_radio/00_tracks/mp3/....mp3
+http://localhost/web_radio/mw_radio/00_tracks/img_lp/....jpg
+
+http://localhost/web_radio/mw_radio/10_tracks/mp3/....mp3
+http://localhost/web_radio/mw_radio/10_tracks/img_lp/....jpg
