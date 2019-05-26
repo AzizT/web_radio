@@ -2,9 +2,9 @@
 
 require_once("../include/init.php");
 
-$resultat = $bdd->prepare("SELECT * FROM tracks WHERE annee BETWEEN :annee1 AND :annee2 ");
+$resultat = $bdd->prepare("SELECT * FROM tracks WHERE annee BETWEEN :annee1 AND :annee2 ORDER BY annee ASC");
 $resultat->bindValue(':annee1', 1950, PDO::PARAM_STR);
-$resultat->bindValue(':annee2', 1970, PDO::PARAM_STR);
+$resultat->bindValue(':annee2', 1969, PDO::PARAM_STR);
 $resultat->execute();
 
 
