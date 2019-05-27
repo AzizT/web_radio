@@ -133,9 +133,11 @@
                         </div>
                 </div>
                 <div class="middle-panel">
-                        <div class="volume-icon"><i class="fas fa-volume-up"></i></div>
+                        <div class="volume-icon"><img src="images/icone_volume.png" alt=""></div>
                         <input type="range" id="radioVolume" min="0" max="1" step="0.01" value="0.5">
                 </div>
+
+                <!-- <i class="fas fa-volume-up"> </i>-->
 
                 <div class="right-panel">
                         <div>
