@@ -225,7 +225,7 @@ ul#menu {
     grid-template-rows: 1fr;
     grid-template-areas: "left-panel middle-panel right-panel";
     grid-column-gap: 20px;
-    background: #1f002e;
+    background: #09000e;
     border-top: 2px solid #9f68af;
     position: fixed;
     bottom: 0;

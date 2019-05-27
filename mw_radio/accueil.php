@@ -148,10 +148,10 @@
                                         <div><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/station-loading.svg" width="30px" height="auto" alt="Γίνεται Σύνδεση"></div>
                                 </div>
                                 <ul id="selectStation">
-                                        <li id="authentiko" class="playing-station"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/authentiko-station.png" width="70px" height="70px" alt="Σταθμός: Αυθεντικό"></li>
-                                        <li id="greeks"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/greeks-station.png" width="70px" height="70px" alt="Σταθμός: Γκρικς"></li>
-                                        <li id="fresh"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/fresh-station.png" width="70px" height="70px" alt="Σταθμός: Fresh"></li>
-                                        <li id="coffee"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/coffee-station.png" width="70px" height="70px" alt="Σταθμός: Coffee"></li>
+                                        <li id="authentiko" class="playing-station"><img src="images/disk2.png" width="70px" height="70px" alt="Σταθμός: Αυθεντικό"></li>
+                                        <!-- <li id="greeks"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/greeks-station.png" width="70px" height="70px" alt="Σταθμός: Γκρικς"></li> -->
+                                        <!-- <li id="fresh"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/fresh-station.png" width="70px" height="70px" alt="Σταθμός: Fresh"></li> -->
+                                        <!-- <li id="coffee"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/coffee-station.png" width="70px" height="70px" alt="Σταθμός: Coffee"></li> -->
                                 </ul>
                         </div>
                 </div>
