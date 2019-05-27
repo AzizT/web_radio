@@ -12,10 +12,10 @@
     let muted = false;
     // Stations Object List
     let stations = {
-      authentiko: "http://shoutcast.24radio.gr:8028/;s3.mp3",
-      greeks: "http://shoutcast.24radio.gr:8052/;s4.mp3",
-      fresh: "http://shoutcast.24radio.gr:8056/;s1.mp3",
-      coffee: "http://shoutcast.24radio.gr:8036/;s2.mp3"
+      authentiko: "http://localhost/web_radio/mw_radio/mp3/1Thing.mp3",
+      greeks: "http://localhost/web_radio/mw_radio/mp3/212.mp3",
+      fresh: "http://localhost/web_radio/mw_radio/mp3/A_Roller_Skating_Jam.mp3",
+      coffee: "http://localhost/web_radio/mw_radio/mp3/A_Virus_Called.mp3"
     };
     // Cache Player Controls
     let $authentiko = $("#authentiko");

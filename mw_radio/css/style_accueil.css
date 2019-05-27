@@ -144,8 +144,9 @@ ul#menu {
     position: relative;
     text-align: center;
     top: 40%;
-    color: #fff;
-    transform: translatey(-50%);
+    color: #9f68af;
+    -webkit-transform: translatey(-50%);
+            transform: translatey(-50%);
     line-height: 17px;
   }
   
@@ -153,13 +154,16 @@ ul#menu {
     font-size: 80px;
     line-height: 100px;
     margin-bottom: 10px;
-    color: #fff;
+    color: #9f68af;
     font-weight: 700;
   }
   
   .radio-app * {
     max-width: 100%;
-    user-select: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -184,7 +188,8 @@ ul#menu {
   }
   
   .volume-icon:hover {
-    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
   }
   
   .volume-icon.isMuted:after {
@@ -196,7 +201,8 @@ ul#menu {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%) rotate(-10deg);
+    -webkit-transform: translate(-50%, -50%) rotate(-10deg);
+            transform: translate(-50%, -50%) rotate(-10deg);
   }
   
   .highlighted {
@@ -212,14 +218,15 @@ ul#menu {
   }
   
   .radio-app {
-    color: #5dacb8;
+    color: #9f68af;
     font-weight: 100;
     display: grid;
     grid-template-columns: 1fr auto 500px;
     grid-template-rows: 1fr;
     grid-template-areas: "left-panel middle-panel right-panel";
     grid-column-gap: 20px;
-    background: #001d2e;
+    background: #1f002e;
+    border-top: 2px solid #9f68af;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -229,7 +236,7 @@ ul#menu {
   }
   
   .radio-app .highlighted {
-    color: #fff;
+    color: #9f68af;
     font-weight: 600;
     letter-spacing: 0.5px;
   }
@@ -247,8 +254,10 @@ ul#menu {
   }
   
   #selectStation li:hover {
-    transform: scale(0.85);
-    transform-origin: center center;
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
+    -webkit-transform-origin: center center;
+            transform-origin: center center;
   }
   
   .left-panel {
@@ -267,6 +276,7 @@ ul#menu {
   .middle-panel {
     grid-area: middle-panel;
     text-align: center;
+    font-size: 1.5rem;
     align-self: center;
     position: relative;
   }
@@ -275,7 +285,8 @@ ul#menu {
     width: 300px;
     position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
   
   .right-panel {
@@ -305,14 +316,15 @@ ul#menu {
   }
   
   .volume-icon svg {
-    transform: translatey(2px);
+    -webkit-transform: translatey(2px);
+            transform: translatey(2px);
   }
   
   #radioVolume {
     -webkit-appearance: none;
     width: 115px;
     height: 20px;
-    background: #05263b;
+    background: #9f68af;
     outline: 0;
     transition: all 0.2s;
     border-radius: 30px;
@@ -320,7 +332,8 @@ ul#menu {
   }
   
   #radioVolume::-webkit-slider-thumb {
-    appearance: none;
+    -webkit-appearance: none;
+            appearance: none;
     width: 15px;
     height: 15px;
     background: #5dc0c5;
@@ -330,17 +343,19 @@ ul#menu {
   }
   
   #radioVolume::-moz-range-thumb {
-    appearance: none;
+    -moz-appearance: none;
+         appearance: none;
     width: 15px;
     height: 15px;
-    background: #5dc0c5;
+    background: #1f002e;
     cursor: pointer;
     border-radius: 100%;
     transition: all ease-out 0.2s;
   }
   
   #radioVolume::-webkit-slider-thumb:active {
-    transform: scale(1.6);
+    -webkit-transform: scale(1.6);
+            transform: scale(1.6);
   }
   
   #radioVolume::-moz-range-thumb:active {
@@ -349,7 +364,8 @@ ul#menu {
   
   .playing-station {
     position: relative;
-    transform: scale(0.85);
+    -webkit-transform: scale(0.85);
+            transform: scale(0.85);
     z-index: 2;
   }
   
@@ -363,11 +379,23 @@ ul#menu {
     top: 50%;
     left: 50%;
     z-index: 5;
-    transform: translate(-50%, -50%) scale(1.15);
-    animation: playStationAnim linear 1.3s;
-    animation-iteration-count: infinite;
+    -webkit-transform: translate(-50%, -50%) scale(1.15);
+            transform: translate(-50%, -50%) scale(1.15);
+    -webkit-animation: playStationAnim linear 1.3s;
+            animation: playStationAnim linear 1.3s;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
   }
   
+  @-webkit-keyframes playStationAnim {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 17px rgba(255, 255, 255, 0);
+  }
+}
+
   @keyframes playStationAnim {
     0% {
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
@@ -382,7 +410,7 @@ ul#menu {
   }
   
   #stationLoading {
-    color: #fff;
+    color: #9f68af;
     font-weight: 600;
     letter-spacing: 0.6px;
     position: absolute;
