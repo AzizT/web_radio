@@ -22,6 +22,7 @@ img.responsive_logo{
     /*besoin de faire une différence avec la img.responsive ci-dessous car je ne veux pas de bordure pour le bandeau*/
     /*border: 1px solid #9f68af;*/
     display: block;
+    margin-top: 9vh;
     margin-right: auto;
     margin-left: auto;
     /*centrer mon bandeau avec les deux margin dans le container*/
@@ -34,7 +35,7 @@ img.responsive_logo{
 }
 img.responsive{
     border: 1px solid #9f68af;
-    margin-top: 20px;/*me permet la séparation nette par rapport aux onglets*/
+    margin-top: 1vh;/*me permet la séparation nette par rapport aux onglets*/
     margin-right: auto;
     margin-left: auto;
     display: block;
@@ -226,9 +227,9 @@ ul#menu {
     grid-template-areas: "left-panel middle-panel right-panel";
     grid-column-gap: 20px;
     background: #09000e;
-    border-top: 2px solid #9f68af;
+    border-bottom: 2px solid #9f68af;
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
     z-index: 2;
