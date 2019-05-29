@@ -3,26 +3,21 @@ body{
     background-attachment: fixed;
     background-position: center center;
     background-size: cover;  
-    font-family: arial;
+    font-family: 'arial';
     color: #9f68af;
-    font-size: 12px;
+    font-size: .7rem;
     text-align: center ;
-    margin-top: 20px;
 }
 
 #container{
-    /*background-color: black;*/
     margin: 0px auto;
     width: 75%;
-    /*border: 1px solid #9f68af;*/
     overflow: hidden;
     /* me sert pour centrer mon image et avoir la bordure extérieure du header AT*/
     }
 img.responsive_logo{
-    /*besoin de faire une différence avec la img.responsive ci-dessous car je ne veux pas de bordure pour le bandeau*/
-    /*border: 1px solid #9f68af;*/
     display: block;
-    margin-top: 9vh;
+    margin-top: 10vh;
     margin-right: auto;
     margin-left: auto;
     /*centrer mon bandeau avec les deux margin dans le container*/
@@ -35,7 +30,7 @@ img.responsive_logo{
 }
 img.responsive{
     border: 1px solid #9f68af;
-    margin-top: 1vh;/*me permet la séparation nette par rapport aux onglets*/
+    margin-top: -.1vh;/*me permet la séparation nette par rapport aux onglets
     margin-right: auto;
     margin-left: auto;
     display: block;
@@ -47,88 +42,33 @@ img.responsive{
     beaucoup moins compliquée et longue que de faire différents formats d' images et demander au navigateur de choisir */
 }
 
-/* Menu Déroulant sans float CSS3 et centré , GCyrillus, corrigé par Franck Chenu */
+/* début des parametres pour la nav bootstrap et la barre de recherche */
 
-/* Base CSS sans float et centrage du menu */
-
-ul#menu {
-	display:table; /* contexte de formatage : alternative = inline-block */
-	margin:auto;   /* centrage pour élément similaire a block, si inline-block, alors text-align:center; sur le parent  */
-	padding:0;		/* reset marge interne */
-    border-spacing: 30px 5px; /* crée un espace entre les deux bordures AT*/
+.navbar .btn{
+  background: #09000e !important;
+  color: #9f68af !important;
+  font-size: .75rem;
+  border: 1px solid #9f68af !important;
+}
+.navbar .btn:hover{
+  background: #230035 !important;
+}
+.dropdown-menu a button{
+  margin-left: -1rem;
+}
+.dropdown-menu a:hover{
+  background: none !important;
+}
+.dropdown-menu a button:hover{
+  background: #230035 !important;
+}
+.form-control{
+  height: 3vh;
 }
 
-#menu li {
-	display:table-cell; /* alternative à float avec contexte de formatage */
-}
+/* fin des reglages navbar */
 
-#menu ul {
-	padding:0;			 	/* reset marge internes */
-	position:absolute;		/* extraction du flux , peut nécessité un z-index selon contexte des styles */
-}
-
-#menu ul li {
-	display:block;			/* retour a un comportement de type block */
-}
-
-/* gestion des menus */
-
-/* on cache au repos les menus */
-#menu ul  {
-	left:-999px;			/* on éjecte le menu de l'écran sans le rendre totalement inaccessible */
-}
-
-/* on affiche le menu au survol de son ITEM parent */
-#menu li:hover ul ,#menu-gc li:focus ul{
-	left:auto;				/* on laisse le navigateur faire 
-	si pas de positionnement relatif impliqué dans un parent  */
-}
-
-/* un peu de mise en forme */
-#menu  {
-	text-align:center;
-}
-
-#menu  li {
-    border: #9f68af solid 1px;
-	width: 5vw;  /* choisi cette valeur après plusieurs tests */
-    line-height : 2vh; /* on définit une hauteur pour chaque élément */
-	background-color: #0b0011;/* BG onglet au repos*/
-	
-}
-/* Attributs pour la texte obligatoires, a séparer des attributs de l' onglet ( dessus) Correction Franck*/
-#menu li a {
-	text-decoration: none;
-	color: #9f68af;/* couleur font onglet au repos*/
-}
-
-/* attributs " au passage " pour l' onglet*/
-#menu li:hover {
-	background-color: #212020;
-}
-
-/* Attributs " au passage " pour le texte cette fois. Comme au-dessus, sinon, la font-color n' est pas prise en compte AT */
-#menu li a:hover {
-    color: #d592e8;
-}
-
-/* **********************début des parametres pour la barre de recherche************************************ */
-
-.recherche{
-    line-height : 2vh;
-    width: 8vw;
-    /* margin-left: 5vw; */
-    border: #9f68af solid 2px;
-}
-.soumettre{
-    line-height : 2.2vh;
-    width: 2vw;
-    background-color: #e5b8f3;
-    border: #9f68af solid 2px;
-    border-radius: 20%;
-}
-
-/* **************************************fin de la barre de recherche******************************************* */
+/* footer */
 
 #piedPage{
     margin: 0px auto;
@@ -137,6 +77,8 @@ ul#menu {
     width: 75%;
     padding: 5px;
 }
+
+/* fin du footer */
 
 /* *********************player JS accueil**************************** */
 /* ***********************https://codepen.io/darkosxrc/pen/XyOEJP****************** */
@@ -154,9 +96,9 @@ ul#menu {
   .info h1 {
     font-size: 80px;
     line-height: 100px;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     color: #9f68af;
-    font-weight: 700;
+    /* font-weight: 700; */
   }
   
   .radio-app * {
@@ -234,6 +176,7 @@ ul#menu {
     width: 100%;
     z-index: 2;
     box-shadow: 0 0 50px 0 rgba(0, 111, 170, 0.2);
+    height: 5rem;
   }
   
   .radio-app .highlighted {
@@ -365,8 +308,8 @@ ul#menu {
   
   .playing-station {
     position: relative;
-    -webkit-transform: scale(0.85);
-            transform: scale(0.85);
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
     z-index: 2;
   }
   
