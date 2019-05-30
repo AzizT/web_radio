@@ -49,12 +49,19 @@ img.responsive{
   color: #9f68af !important;
   font-size: .75rem;
   border: 1px solid #9f68af !important;
+  
 }
 .navbar .btn:hover{
   background: #230035 !important;
 }
 .dropdown-menu a button{
-  margin-left: -1rem;
+  /* margin-left: -1rem; */
+  width: 7rem;
+}
+.dropdown-menu{
+  background: #09000e !important;
+  border: 1px solid #9f68af !important;
+  
 }
 .dropdown-menu a:hover{
   background: none !important;
@@ -176,7 +183,7 @@ img.responsive{
     width: 100%;
     z-index: 2;
     box-shadow: 0 0 50px 0 rgba(0, 111, 170, 0.2);
-    height: 5rem;
+    height: 8vh;
   }
   
   .radio-app .highlighted {
@@ -308,8 +315,8 @@ img.responsive{
   
   .playing-station {
     position: relative;
-    -webkit-transform: scale(0.75);
-            transform: scale(0.75);
+    -webkit-transform: scale(0.55);
+            transform: scale(0.55);
     z-index: 2;
   }
   

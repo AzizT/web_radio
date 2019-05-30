@@ -60,7 +60,7 @@
                                                                 <a class="nav-link <!--dropdown-toggle-->" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                 <button class="btn btn-sm btn-outline-success" type="button">Web Radios <i class="fas fa-arrow-alt-circle-down"></i></button>
                                                                 </a>
-                                                                <div class="dropdown-menu bg-transparent" aria-labelledby="navbarDropdown">
+                                                                <div class="dropdown-menu text text-center" aria-labelledby="navbarDropdown">
                                                                 <a class="dropdown-item" href="http://www.nova.fr/radionova/nova-la-nuit" target="_blank"><button class="btn btn-sm" type="button">Nova La Nuit</button></a>
                                                                 <a class="dropdown-item" href="http://player.radiomeuh.com/" target="_blank"><button class="btn btn-sm" type="button">Radio Meuh</button></a>
                                                                 <a class="dropdown-item" href="http://www.djamradio.com/?lang=fr" target="_blank"><button class="btn btn-sm" type="button">Djam Radio</button></a>
@@ -69,10 +69,10 @@
                                                                 </div>
                                                         </li>
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="#"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-sign-in-alt"></i> M' enregistrer</button></a>
+                                                                <a class="nav-link" href="admin/inscription_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-sign-in-alt"></i> Inscription</button></a>
                                                         </li>
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="#"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Me connecter</button></a>
+                                                                <a class="nav-link" href="admin/connexion_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Connexion</button></a>
                                                         </li>
                                         </ul>
                                         <form class="form-inline my-2 my-lg-0 mr-3">
