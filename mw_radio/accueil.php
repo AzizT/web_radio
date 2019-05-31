@@ -1,3 +1,7 @@
+<?php
+require_once("include/init.php");
+?>
+
 <!DOCTYPE HTML>
 <html lang="fr">
 
@@ -27,159 +31,195 @@
                 <header>
                         <img src="images/logo_bandeau.png" alt="bandeau mw radio" class="responsive_logo" />
 
+                        <!-- début de ma navbar, insérée dans une row -->
+
                         <div class="row">
                         
                         <nav class="navbar navbar-expand-lg col-md-12 navbar-dark bg-transparent">
-                                        <a class="navbar-brand" href="#"></a>
-                                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                                        <span class="navbar-toggler-icon"></span>
-                                        </button>
 
-                                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <a class="navbar-brand" href="#"></a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                                </button>
+
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                
                                         <ul class="navbar-nav mr-auto">
+
+                                        <?php if (internauteEstConnecte()) : ?>
+
+                                                        <!-- je donne les autorisations a l' utilisateur connecté, et je lui retire le reste
+                                                        ici, je lui donne l' autorisation pour profil + se deconnecter , en plus de la biblioteheque tracks-->
+
+                                                        <!-- d' abord les onglets tracks classés par decennies -->
+
                                                         <li class="nav-item">
                                                                 <a class="nav-link" href="50_60_tracks/Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
                                                         </li>
+
                                                         <li class="nav-item">
                                                                 <a class="nav-link" href="70_tracks/Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
                                                         </li>
+
                                                         <li class="nav-item">
                                                                 <a class="nav-link" href="80_tracks/Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
                                                         </li>
+
                                                         <li class="nav-item">
                                                                 <a class="nav-link" href="90_tracks/Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
                                                         </li>
+
                                                         <li class="nav-item">
                                                                 <a class="nav-link" href="00_tracks/Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
                                                         </li>
+
                                                         <li class="nav-item">
                                                                 <a class="nav-link" href="10_tracks/Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
                                                         </li>
+
+                                                        <!-- onglet déroulant pour les Web Radios -->
                                                         
                                                         <li class="nav-item dropdown">
+
                                                                 <a class="nav-link <!--dropdown-toggle-->" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                                 <button class="btn btn-sm btn-outline-success" type="button">Web Radios <i class="fas fa-arrow-alt-circle-down"></i></button>
                                                                 </a>
+
                                                                 <div class="dropdown-menu text text-center" aria-labelledby="navbarDropdown">
-                                                                <a class="dropdown-item" href="http://www.nova.fr/radionova/nova-la-nuit" target="_blank"><button class="btn btn-sm" type="button">Nova La Nuit</button></a>
-                                                                <a class="dropdown-item" href="http://player.radiomeuh.com/" target="_blank"><button class="btn btn-sm" type="button">Radio Meuh</button></a>
-                                                                <a class="dropdown-item" href="http://www.djamradio.com/?lang=fr" target="_blank"><button class="btn btn-sm" type="button">Djam Radio</button></a>
-                                                                <a class="dropdown-item" href="http://www.sing-sing-bis.org/results.php?kbps=Infinity" target="_blank"><button class="btn btn-sm" type="button">Sing Sing</button></a>
-                                                                <a class="dropdown-item" href="http://www.tsfjazz.com/accueil.php" target="_blank"><button class="btn btn-sm" type="button">TSF Jazz</button></a>
+
+                                                                        <a class="dropdown-item" href="http://www.nova.fr/radionova/nova-la-nuit" target="_blank"><button class="btn btn-sm" type="button">Nova La Nuit</button></a>
+
+                                                                        <a class="dropdown-item" href="http://player.radiomeuh.com/" target="_blank"><button class="btn btn-sm" type="button">Radio Meuh</button></a>
+
+                                                                        <a class="dropdown-item" href="http://www.djamradio.com/?lang=fr" target="_blank"><button class="btn btn-sm" type="button">Djam Radio</button></a>
+
+                                                                        <a class="dropdown-item" href="http://www.sing-sing-bis.org/results.php?kbps=Infinity" target="_blank"><button class="btn btn-sm" type="button">Sing Sing</button></a>
+
+                                                                        <a class="dropdown-item" href="http://www.tsfjazz.com/accueil.php" target="_blank"><button class="btn btn-sm" type="button">TSF Jazz</button></a>
+
                                                                 </div>
                                                         </li>
+
+                                                        <!-- les onglets fonctionnalités pour l' utilisateur connecté -->
+
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="admin/profil.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-music"></i> Profil</button></a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="<?= URL ?>admin/connexion_membre.php?action=deconnexion"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Deconnexion</button></a>
+                                                        </li>
+
+                                                        <!-- fin des onglets pour l' utilisateur connecté et début de ceux pour celui qui ne l' est pas encore -->
+
+                                                        <?php else : ?>
+                                                        <!-- les autorisations pour celui qui n' est pas connecté et je commence a nouveau avec les onglets tracks rangés par decennies -->
+
+                                                        <li class="nav-item">
+
+                                                                <a class="nav-link" href="50_60_tracks/Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
+                                                        </li>
+
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="70_tracks/Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
+                                                        </li>
+
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="80_tracks/Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
+                                                        </li>
+
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="90_tracks/Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
+                                                        </li>
+
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="00_tracks/Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
+                                                        </li>
+
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="10_tracks/Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
+                                                        </li>
+
+                                                        <!-- puis le menu déroulant pour les web radios -->
+                                                        
+                                                        <li class="nav-item dropdown">
+
+                                                                <a class="nav-link <!--dropdown-toggle-->" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                <button class="btn btn-sm btn-outline-success" type="button">Web Radios <i class="fas fa-arrow-alt-circle-down"></i></button>
+                                                                </a>
+
+                                                                <div class="dropdown-menu text text-center" aria-labelledby="navbarDropdown">
+
+                                                                        <a class="dropdown-item" href="http://www.nova.fr/radionova/nova-la-nuit" target="_blank"><button class="btn btn-sm" type="button">Nova La Nuit</button></a>
+
+                                                                        <a class="dropdown-item" href="http://player.radiomeuh.com/" target="_blank"><button class="btn btn-sm" type="button">Radio Meuh</button></a>
+
+                                                                        <a class="dropdown-item" href="http://www.djamradio.com/?lang=fr" target="_blank"><button class="btn btn-sm" type="button">Djam Radio</button></a>
+
+                                                                        <a class="dropdown-item" href="http://www.sing-sing-bis.org/results.php?kbps=Infinity" target="_blank"><button class="btn btn-sm" type="button">Sing Sing</button></a>
+
+                                                                        <a class="dropdown-item" href="http://www.tsfjazz.com/accueil.php" target="_blank"><button class="btn btn-sm" type="button">TSF Jazz</button></a>
+
+                                                                </div>
+                                                        </li>
+
+                                                        <!-- et je termine avec les fonctionnalités pour s' inscrire ou se connecter -->
+
                                                         <li class="nav-item">
                                                                 <a class="nav-link" href="admin/inscription_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-sign-in-alt"></i> Inscription</button></a>
                                                         </li>
                                                         <li class="nav-item">
                                                                 <a class="nav-link" href="admin/connexion_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Connexion</button></a>
                                                         </li>
+
+                                                        <?php endif; ?>
+
+                                                        <!-- fin de la section qui concerne l' internaute non connecté et j' ajoute ci desssous un onglet supplémentaire, pour le connecté, avec statut d' administrateur ( pour l' instant un seul onglet, mais qui pourra etre adapté en  menu déroulant avec plusieurs onglets selon les besoins-->
+
+                                                        <?php if (internauteEstConnecteEstAdmin()) : ?>
+
+                                                        <li class="nav-item">
+                                                                <a class="nav-link" href="admin/gestion_site.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-user-cog"></i> Administration</button></a>
+                                                        </li>
+
+                                                        <?php endif; ?>
+                                                        <!-- fin du panneau administrateur -->
+
                                         </ul>
+                                
+
+                                        <!-- la search bar ainsi que le bouton submit integrés dans ma nav-->
                                         <form class="form-inline my-2 my-lg-0 mr-3">
                                         <input class="form-control mr-sm-2" type="search" placeholder="Search" title="Vous recherchez un album, un musicien, une année ?" aria-label="Search">
                                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
                                         </form>
-                                        </div>
+
+                                </div>
+
                         </nav>
 
                         </div>
+                        <!-- fin de ma nav, et de la row par conséquent -->
+
                 </header>
 
-                <!-- <nav>
-                        <ul id="menu">
-
-                                <li>
-
-                                        <a href="50_60_tracks/Index_50_60.php">50' 60' Tracks</a>
-
-                                </li>
-
-                                <li>
-
-                                        <a href="70_tracks/Index_70.php">70' Tracks</a>
-
-                                </li>
-
-                                <li>
-
-                                        <a href="80_tracks/Index_80.php">80' Tracks</a>
-
-                                </li>
-
-                                <li>
-
-                                        <a href="90_tracks/Index_90.php">90' Tracks</a>
-
-                                </li>
-
-                                <li>
-
-                                        <a href="00_tracks/Index_00.php">00' Tracks</a>
-
-                                </li>
-
-                                <li>
-
-                                        <a href="10_tracks/Index_10.php">10' Tracks</a>
-
-                                </li>
-
-                                <li>
-
-                                        <a href="#">Web Radios</a>
-
-                                        <ul>
-
-                                                <li><a href="http://www.nova.fr/radionova/nova-la-nuit" target="_blank">Nova La Nuit</a></li>
-                                                <li><a href="http://www.djamradio.com/?lang=fr" target="_blank">Djam Radio</a></li>
-                                                <li><a href="http://player.radiomeuh.com/" target="_blank">Radio Meuh</a></li>
-                                                <li><a href="http://www.sing-sing-bis.org/results.php?kbps=Infinity" target="_blank">Sing Sing</a></li>
-                                                <li><a href="http://www.tsfjazz.com/accueil.php" target="_blank">TSF Jazz</a></li>
-
-                                        </ul>
-
-                                </li>
-
-
-                                <li>
-
-                                        <a href="inscription_membre.php">Inscription</a>
-                                        <ul>
-                                                <li>
-                                                        <a href="track_insert.php">insertion</a>
-                                                </li>
-                                        </ul>
-
-                                </li>
-
-
-
-                                <!-- ma barre de recherche et son submit + une pop up pour aider l' utilisateur -->
-                                <!-- <input class="recherche" type="search" placeholder="Search" title="Vouz recherchez un album, un musicien, une année ?" aria-label="Search">
-
-                                <button class="soumettre" type="submit"><i class="fas fa-search"></i></button> -->
-
-
-
-                        </ul>
-
-
-
-
-
-                </nav>
+                <!-- l' image avec les différents musiciens =/ du background qui elle se loge directement dans le css -->
 
                 <img src="images/image_accueil.jpg" alt="image accueil mw radio" class="responsive" />
 
+                <!-- mon footer -->
+
+                <footer id="piedPage">
+                        <p>
+                                "Information is not knowledge. Knowledge is not wisdom. Wisdom is not truth. Truth is not beauty. Beauty is not love. Love is not music. Music is THE BEST."-FZ.<br />
+                                © Powered by Mézigue & Fils - 2018</p>
+                </footer>
+
+                <!-- fin du footer -->
+
         </div>
 
-        <footer id="piedPage">
-                <p>
-                        "Information is not knowledge. Knowledge is not wisdom. Wisdom is not truth. Truth is not beauty. Beauty is not love. Love is not music. Music is THE BEST."-FZ.<br />
-                        © Powered by Mézigue & Fils - 2018</p>
-        </footer>
-
-        <!-- ***********************************************début du lecteur JS********************************** -->
+        <!-- ***********************************************début du lecteur JS**********************************
+        Je le situe ici dans mon code, mais il figure en haut de page pour le rendu utilisateur, reglage en css, position fixed, top-->
 
         <div class="info">
 
@@ -191,7 +231,7 @@
                                 <img src="https://www.gsiamidis.com/projects/thewebradio/station-playing.svg" width="30px" height="auto" alt="Playing">
                         </div>
                         <div class="songs-titles">
-                                <p class="highlighted">NOW PLAYING</p>
+                                <p class="highlighted">Hit Me With Music !</p>
                                 <p id="nowPlaying">...</p>
                         </div>
                 </div>
@@ -221,6 +261,10 @@
                         </div>
                 </div>
         </div>
+
+        <!-- ****************************************************fin du lecteur JS******************************************* -->
+
+        
 
         <!-- librairie Bootstrap -->
 
