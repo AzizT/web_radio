@@ -78,8 +78,8 @@ $resultat->execute();
 
     <!-- **********************************************début de la zone commentaire************************************ -->
     <section class="container-fluid commentaire">
-        <div class="form-group text-center">
-            <label for="comment">Laissez un commentaire</label>
+        <div class="form-group">
+            <label for="comment" class="offset-md-3"><?= $_SESSION['membre']['pseudo'] ?> , laissez un commentaire !</label>
             <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
         </div>
     </section>

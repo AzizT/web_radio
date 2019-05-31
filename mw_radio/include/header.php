@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 $title = '';
 $album = '';
@@ -29,7 +29,7 @@ if (!empty($_GET)) {
     $musician5= $_GET['musician5'];
     $musician6= $_GET['musician6'];
 }
-?>
+?> -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>

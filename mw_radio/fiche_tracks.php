@@ -1,6 +1,6 @@
 <?php
-require_once("../include/init.php");
-require_once("../include/header.php");
+require_once("include/init.php");
+require_once("include/header.php");
 
 
 $resultat = $bdd->prepare("SELECT * FROM tracks WHERE id_tracks = :id_tracks");
@@ -93,5 +93,5 @@ $resultat->execute();
 
 <?php endwhile; ?>
 <?php
-require_once("../include/footer.php");
+require_once("include/footer.php");
 ?>
