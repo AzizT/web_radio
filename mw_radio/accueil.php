@@ -231,7 +231,7 @@ require_once("include/init.php");
                                 <img src="https://www.gsiamidis.com/projects/thewebradio/station-playing.svg" width="30px" height="auto" alt="Playing">
                         </div>
                         <div class="songs-titles">
-                                <p class="highlighted">Hit Me With Music !</p>
+                                <p class="highlighted">NOW PLAYING</p>
                                 <p id="nowPlaying">...</p>
                         </div>
                 </div>
@@ -244,8 +244,8 @@ require_once("include/init.php");
 
                 <div class="right-panel">
                         <div>
-                                <p class="highlighted">Cliquer</p>
-                                <p>Pour Ecouter</p>
+                                <p class="highlighted">Hit Me With Music !</p>
+                                <p>Cliquer Pour Ecouter</p>
                         </div>
                         <div class="select-station">
                                 <div id="stationLoading">

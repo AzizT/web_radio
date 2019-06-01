@@ -76,13 +76,27 @@ $resultat->execute();
 
     <!-- *******************************************fin de la section infos + image *********************************** -->
 
-    <!-- **********************************************début de la zone commentaire************************************ -->
+    <!-- **********************************************début de la zone commentaire, qui n' apparait que si l' utilisateur est connecté************************************ -->
+
+    <?php if (internauteEstConnecte()) : ?>
+
     <section class="container-fluid commentaire">
         <div class="form-group">
             <label for="comment" class="offset-md-3"><?= $_SESSION['membre']['pseudo'] ?> , laissez un commentaire !</label>
             <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
         </div>
     </section>
+
+    <?php else : ?>
+
+    <section class="container-fluid commentaire">
+        <div class="form-group">
+            <label for="comment" class="offset-md-3">Connectez vous pour laissez un commentaire !</label>
+            <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
+        </div>
+    </section>
+
+    <?php endif; ?>
     <!-- **********************************************fin de la zone commentaire*************************************** -->
 
 

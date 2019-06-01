@@ -1,4 +1,3 @@
-
 <?php
     require_once("../include/header.php");
     require_once("../include/init.php");
@@ -19,8 +18,6 @@ if(isset($_GET['action']) && $_GET['action'] == 'deconnexion')
 if (isset($_GET['action']) && $_GET['action'] == 'validate') {
     $validate .= '<div class="col-md-6 offset-md-3 alert alert-success text-dark">Félicitations, vous etes inscrits sur le site. Vous pouvez dès a présent vous connecter</div>';
 }
-
-// echo '<pre>'; print_r($_POST); echo'</pre>';
 
 if ($_POST) {
     // on selectionne tout dans la table membre, a condition que la colonne pseudo/email ou similaire a celle saisie dans le formulaire
@@ -44,7 +41,6 @@ if ($_POST) {
 
         // on entre dans ce ifi seulement si l' utilisateur a entré les bonnes données ( email, pseudo, mdp)
         if ($membre['mdp'] == $mdp) {
-                // echo 'le mot de passe est validé';
                 foreach($membre as $key => $value)
                 {
                     if($key != 'mdp')

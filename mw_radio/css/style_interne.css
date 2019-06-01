@@ -180,7 +180,7 @@ adapté le css, notamment avec de la transparence */
 
   /* **************************************gestion de la zone de commentaire**************************** */
   .commentaire{
-    font: 2rem 'satisfy' ;
+    font: 1.5rem 'satisfy' ;
     color: purple;
     text-shadow: 2px 2px 2px black;
     margin-bottom: 15vh;
