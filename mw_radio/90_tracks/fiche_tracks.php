@@ -22,7 +22,7 @@ $resultat->execute();
 
     <p class="year"><?php echo $tracks['annee']; ?></p>
 
-    <p class="genre"><?php echo $tracks['genre1']; ?></p>
+    <p class="genre"><?php echo $tracks['genre1']; ?> - <?php echo $tracks['genre2']; ?></p>
 
     <!-- la section qui va accueillir le lecteur mp3 -->
     <section class="col-md-6 offset-3 lecteur_mp3">
