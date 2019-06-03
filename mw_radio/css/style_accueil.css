@@ -28,20 +28,6 @@ img.responsive_logo{
     https://openclassrooms.com/forum/sujet/css-responsive-modifier-la-taille-des-images
     beaucoup moins compliquée et longue que de faire différents formats d' images et demander au navigateur de choisir */
 }
-img.responsive{
-    border: 1px solid #9f68af;
-    margin-top: -.1vh;/*me permet la séparation nette par rapport aux onglets
-    margin-right: auto;
-    margin-left: auto;
-    display: block;
-    max-width: 99%;
-    /* Si 100%, bordure droite n'apparait pas */
-    height: auto;
-    /* solution pour une image responsive trouvée ici
-    https://openclassrooms.com/forum/sujet/css-responsive-modifier-la-taille-des-images
-    beaucoup moins compliquée et longue que de faire différents formats d' images et demander au navigateur de choisir */
-}
-
 /* début des parametres pour la nav bootstrap et la barre de recherche */
 
 .navbar .btn{

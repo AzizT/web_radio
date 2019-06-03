@@ -203,8 +203,11 @@ require_once("include/init.php");
                 </header>
 
                 <!-- l' image avec les différents musiciens =/ du background qui elle se loge directement dans le css -->
+                <div class="row">
 
-                <img src="images/image_accueil.jpg" alt="image accueil mw radio" class="responsive" />
+                <img class="col-md-12 responsive mt-1" src="images/image_accueil.jpg" alt="image accueil mw radio" />
+        
+                </div>
 
                 <!-- mon footer -->
 
