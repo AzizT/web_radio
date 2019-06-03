@@ -28,6 +28,9 @@ img.responsive_logo{
     https://openclassrooms.com/forum/sujet/css-responsive-modifier-la-taille-des-images
     beaucoup moins compliquée et longue que de faire différents formats d' images et demander au navigateur de choisir */
 }
+.image_responsive{
+  background-size: cover;
+}
 /* début des parametres pour la nav bootstrap et la barre de recherche */
 
 .navbar .btn{

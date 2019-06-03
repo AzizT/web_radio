@@ -205,8 +205,8 @@ require_once("include/init.php");
                 <!-- l' image avec les différents musiciens =/ du background qui elle se loge directement dans le css -->
                 <div class="row">
 
-                <img class="col-md-12 responsive mt-1" src="images/image_accueil.jpg" alt="image accueil mw radio" />
-        
+                        <img class="col-md-12 image_responsive" src="images/image_accueil.png" alt="image accueil mw radio" />
+                        
                 </div>
 
                 <!-- mon footer -->
@@ -223,47 +223,48 @@ require_once("include/init.php");
 
         <!-- ***********************************************début du lecteur JS**********************************
         Je le situe ici dans mon code, mais il figure en haut de page pour le rendu utilisateur, reglage en css, position fixed, top-->
+        
+                <div class="info">
 
-        <div class="info">
-
-        </div>
-
-        <div class="radio-app">
-                <div class="left-panel">
-                        <div>
-                                <img src="https://www.gsiamidis.com/projects/thewebradio/station-playing.svg" width="30px" height="auto" alt="Playing">
-                        </div>
-                        <div class="songs-titles">
-                                <p class="highlighted">NOW PLAYING</p>
-                                <p id="nowPlaying">...</p>
-                        </div>
-                </div>
-                <div class="middle-panel">
-                        <div class="volume-icon"><img src="images/icone_volume.png" alt=""></div>
-                        <input type="range" id="radioVolume" min="0" max="1" step="0.01" value="0.5">
                 </div>
 
-                <!-- <i class="fas fa-volume-up"> </i>-->
-
-                <div class="right-panel">
-                        <div>
-                                <p class="highlighted">Hit Me With Music !</p>
-                                <p>Cliquer Pour Ecouter</p>
-                        </div>
-                        <div class="select-station">
-                                <div id="stationLoading">
-                                        <div>Connecting</div>
-                                        <div><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/station-loading.svg" width="30px" height="auto" alt="Γίνεται Σύνδεση"></div>
+                <div class="radio-app">
+                        <div class="left-panel">
+                                <div>
+                                        <img src="https://www.gsiamidis.com/projects/thewebradio/station-playing.svg" width="30px" height="auto" alt="Playing">
                                 </div>
-                                <ul id="selectStation">
-                                        <li id="authentiko" class="playing-station"><img src="images/disk2.png" width="70px" height="70px" alt="Σταθμός: Αυθεντικό"></li>
-                                        <!-- <li id="greeks"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/greeks-station.png" width="70px" height="70px" alt="Σταθμός: Γκρικς"></li> -->
-                                        <!-- <li id="fresh"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/fresh-station.png" width="70px" height="70px" alt="Σταθμός: Fresh"></li> -->
-                                        <!-- <li id="coffee"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/coffee-station.png" width="70px" height="70px" alt="Σταθμός: Coffee"></li> -->
-                                </ul>
+                                <div class="songs-titles">
+                                        <p class="highlighted">NOW PLAYING</p>
+                                        <p id="nowPlaying">...</p>
+                                </div>
+                        </div>
+                        <div class="middle-panel">
+                                <div class="volume-icon"><img src="images/icone_volume.png" alt=""></div>
+                                <input type="range" id="radioVolume" min="0" max="1" step="0.01" value="0.5">
+                        </div>
+
+                        <!-- <i class="fas fa-volume-up"> </i>-->
+
+                        <div class="right-panel">
+                                <div>
+                                        <p class="highlighted">Hit Me With Music !</p>
+                                        <p>Cliquer Pour Ecouter</p>
+                                </div>
+                                <div class="select-station">
+                                        <div id="stationLoading">
+                                                <div>Connecting</div>
+                                                <div><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/station-loading.svg" width="30px" height="auto" alt="Γίνεται Σύνδεση"></div>
+                                        </div>
+                                        <ul id="selectStation">
+                                                <li id="authentiko" class="playing-station"><img src="images/disk2.png" width="70px" height="70px" alt="Σταθμός: Αυθεντικό"></li>
+                                                <!-- <li id="greeks"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/greeks-station.png" width="70px" height="70px" alt="Σταθμός: Γκρικς"></li> -->
+                                                <!-- <li id="fresh"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/fresh-station.png" width="70px" height="70px" alt="Σταθμός: Fresh"></li> -->
+                                                <!-- <li id="coffee"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/coffee-station.png" width="70px" height="70px" alt="Σταθμός: Coffee"></li> -->
+                                        </ul>
+                                </div>
                         </div>
                 </div>
-        </div>
+        
 
         <!-- ****************************************************fin du lecteur JS******************************************* -->
 
