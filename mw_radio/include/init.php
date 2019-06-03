@@ -5,6 +5,17 @@ $bdd = new PDO('mysql:host=localhost;dbname=mw_radio', 'root', '', array(PDO::AT
 // *************************************************************session
 
 session_start();
+
+// *******************************************************chemin************************************************
+
+define("RACINE_SITE", $_SERVER['DOCUMENT_ROOT'] . '/web_radio/mw_radio/');
+// Lors de l' enregistrement d' image/photos, nous aurons besoin du chemin physique complet, pour enregistrer la photo dans le bon dossier (lui filer celui du chemin global, celui ou se situait l' index supprimé depuis)
+// echo RACINE_SITE;
+
+define("URL", "http://localhost/web_radio/mw_radio/");
+// echo URL;
+// cette constante servira entre autre a enregistrer l' URL d' une photo / image dans la bdd. On ne conserve jamais la photo en elle même, ce serait trop lourd pourla bdd
+
 // *********************************************qlq variables*************************************************
 $error1 = '';
 $error = '';
