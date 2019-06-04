@@ -57,12 +57,12 @@ $resultat->execute();
 
         <div class="col-md-5">
 
-            <p class="personnel"><?php echo $musician1; ?></p>
-            <p class="personnel"><?php echo $musician2; ?></p>
-            <p class="personnel"><?php echo $musician3; ?></p>
-            <p class="personnel"><?php echo $musician4; ?></p>
-            <p class="personnel"><?php echo $musician5; ?></p>
-            <p class="personnel"><?php echo $musician6; ?></p>
+            <p class="personnel"><?php echo $tracks['musicien1'] ?></p>
+            <p class="personnel"><?php echo $tracks['musicien2'] ?></p>
+            <p class="personnel"><?php echo $tracks['musicien3'] ?></p>
+            <p class="personnel"><?php echo $tracks['musicien4'] ?></p>
+            <p class="personnel"><?php echo $tracks['musicien5'] ?></p>
+            <p class="personnel"><?php echo $tracks['musicien6'] ?></p>
 
         </div>
 
