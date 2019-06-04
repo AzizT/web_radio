@@ -43,8 +43,8 @@ $resultat->execute();
 
             <!-- troisieme colonne pour link vers les lyrics -->
             <!-- <div class="col-md-1 title_tracks">
-                                <span>lyrics</span>
-                            </div> -->
+                                                <span>lyrics</span>
+                                            </div> -->
 
         </div>
         <!-- fermeture de row -->
@@ -80,21 +80,21 @@ $resultat->execute();
 
     <?php if (internauteEstConnecte()) : ?>
 
-    <section class="container-fluid commentaire">
-        <div class="form-group">
-            <label for="comment" class="offset-md-3"><?= $_SESSION['membre']['pseudo'] ?> , laissez un commentaire !</label>
-            <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
-        </div>
-    </section>
+        <section class="container-fluid commentaire">
+            <div class="form-group">
+                <label for="comment" class="offset-md-3"><?= $_SESSION['membre']['pseudo'] ?> , laissez un commentaire !</label>
+                <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
+            </div>
+        </section>
 
     <?php else : ?>
 
-    <section class="container-fluid commentaire">
-        <div class="form-group">
-            <label for="comment" class="offset-md-3">Connectez vous pour laissez un commentaire !</label>
-            <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
-        </div>
-    </section>
+        <section class="container-fluid commentaire">
+            <div class="form-group">
+                <label for="comment" class="offset-md-3">Connectez vous pour laissez un commentaire !</label>
+                <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
+            </div>
+        </section>
 
     <?php endif; ?>
     <!-- **********************************************fin de la zone commentaire*************************************** -->
