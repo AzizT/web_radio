@@ -1,10 +1,12 @@
 <?php
-// **************************************************************connexion bdd
-$bdd = new PDO('mysql:host=localhost;dbname=mw_radio', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
-
 // *************************************************************session
 
 session_start();
+
+// **************************************************************connexion bdd
+$bdd = new PDO('mysql:host=localhost;dbname=mw_radio', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING, PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+
+
 
 // *******************************************************chemin************************************************
 

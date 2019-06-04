@@ -1,0 +1,19 @@
+<?php
+require_once("../include/init.php"); // session_start() et connexion à la BDD, variables
+
+
+
+
+
+// les header et le session_start doivent absolument être avant la premiere ligne d'HTML
+
+
+
+
+
+
+
+
+require_once("../include/header.php"); // partie visuelle haute du site (HTML)
+?>
+<!--  Contenu de la page en HTML (body etc...) -->
