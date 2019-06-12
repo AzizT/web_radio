@@ -3,10 +3,9 @@ require_once("../include/init.php");
 require_once("../include/header.php");
 
 
-$resultat = $bdd->prepare("SELECT * FROM tracks WHERE id_tracks = :id_tracks");
-// $resultat = $bdd->prepare("SELECT nom, prenom, instrument1, instrument2 FROM musicien as m, tracks as t WHERE t.id_tracks = m.fk_track1" );
-// SELECT nom, prenom, instrument1, instrument2 FROM musicien AS m INNER JOIN tracks AS t WHERE m.fk_track1 = t.id_tracks;
-$resultat->bindValue(':id_tracks', $_GET['id_tracks'], PDO::PARAM_STR);
+$resultat = $bdd->prepare("SELECT * FROM album as m, track as t WHERE m.id = t.idAlbum AND m.id= :id ");
+// $resultat = $bdd->prepare("SELECT * FROM tracks WHERE id_tracks = :id_tracks");
+$resultat->bindValue(':id', $_GET['id'], PDO::PARAM_STR);
 $resultat->execute();
 
 
@@ -38,13 +37,13 @@ $resultat->execute();
             <!-- deuxieme colonne pour le lecteur -->
             <div class="">
                 <div id="sm2-container"></div>
-                <div class="song ui360 exclude button-exclude inline-exclude"><a href=<?php echo $tracks['fichier'] ?>><span class="titre_album"><?php echo $tracks['album']; ?></span></a></div>
+                <div class="song ui360 exclude button-exclude inline-exclude"><a href="../mp3/<?php echo $tracks['mp3'] ?>"><span class="titre_album"><?php echo $tracks['name']; ?></span></a></div>
             </div>
 
             <!-- troisieme colonne pour link vers les lyrics -->
             <!-- <div class="col-md-1 title_tracks">
-                                <span>lyrics</span>
-                            </div> -->
+                                        <span>lyrics</span>
+                                    </div> -->
 
         </div>
         <!-- fermeture de row -->
@@ -68,8 +67,8 @@ $resultat->execute();
 
         <div class="col-md-5 mt-3">
 
-            <img src="<?php echo $tracks['photo']; ?>" alt="" class="image-random" />
-
+            <img src="img_lp/<?php echo $tracks['photo']; ?>" alt="" class="image-random" />
+            <!--  <img src="<?= URL ?>dossier_photo/<?php echo $tracks['photo']; ?>" alt="" class="image-random" /> -->
         </div>
 
     </section>
@@ -80,21 +79,21 @@ $resultat->execute();
 
     <?php if (internauteEstConnecte()) : ?>
 
-    <section class="container-fluid commentaire">
-        <div class="form-group">
-            <label for="comment" class="offset-md-3"><?= $_SESSION['membre']['pseudo'] ?> , laissez un commentaire !</label>
-            <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
-        </div>
-    </section>
+        <section class="container-fluid commentaire">
+            <div class="form-group">
+                <label for="comment" class="offset-md-3"><?= $_SESSION['membre']['pseudo'] ?> , laissez un commentaire !</label>
+                <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
+            </div>
+        </section>
 
     <?php else : ?>
 
-    <section class="container-fluid commentaire">
-        <div class="form-group">
-            <label for="comment" class="offset-md-3">Connectez vous pour laissez un commentaire !</label>
-            <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
-        </div>
-    </section>
+        <section class="container-fluid commentaire">
+            <div class="form-group">
+                <label for="comment" class="offset-md-3">Connectez vous pour laissez un commentaire !</label>
+                <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
+            </div>
+        </section>
 
     <?php endif; ?>
     <!-- **********************************************fin de la zone commentaire*************************************** -->
