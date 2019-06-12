@@ -12,7 +12,7 @@
     
     ?>
     
-    <h1 class="display-4 text-center">Bonjour, <?= $_SESSION['membre']['pseudo'] ?></h1>
+    <h1 class="display-4 text-center">Bonjour, <?= $_SESSION['membre']['username'] ?></h1>
     <hr>
     
     <!-- realiser page profil avec toutes les données affichées dans le array, sauf id_membre et statut -->

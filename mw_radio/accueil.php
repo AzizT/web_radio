@@ -103,7 +103,7 @@ require_once("include/init.php");
                                                         <!-- les onglets fonctionnalités pour l' utilisateur connecté -->
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="admin/profil.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-music"></i> <strong><?= $_SESSION['membre']['pseudo'] ?></strong></button></a>
+                                                                <a class="nav-link" href="admin/profil.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-music"></i> <strong><?= $_SESSION['membre']['username'] ?></strong></button></a>
                                                         </li>
                                                         <li class="nav-item">
                                                                 <a class="nav-link" href="<?= URL ?>admin/connexion_membre.php?action=deconnexion"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Deconnexion</button></a>

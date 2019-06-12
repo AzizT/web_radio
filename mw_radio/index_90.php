@@ -22,8 +22,8 @@ require_once("include/header.php");
             <a href="fiche_tracks.php?id=<?= $tracks['id'] ?>">
                 <img src="img_lp/<?= $tracks['photo'] ?>" alt="<?= $tracks['name'] . $tracks['genre1'] ?>" class="tile-image" />
                 <div class="tile-text">
-                    <h2 class="tile-title"><?= $tracks['title'] ?></h2>
-                    <p class="tile-description"><?= $tracks['interprete'] . '<br>' . $tracks['annee'] . '<br>' . $tracks['name'] . '<br>' . $tracks['genre1'] ?></p>
+                    <h2 class="tile-title"><?= $tracks['interprete'] ?></h2>
+                    <p class="tile-description"><?= $tracks['annee'] . '<br>' . $tracks['name'] . '<br>' . $tracks['genre1'] ?></p>
                 </div>
             </a>
         </div>
