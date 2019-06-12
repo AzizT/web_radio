@@ -1,6 +1,6 @@
 <?php
-require_once("../include/init.php");
-require_once("../include/header.php");
+require_once("include/init.php");
+require_once("include/header.php");
 
 
 $resultat = $bdd->prepare("SELECT * FROM album as m, track as t WHERE m.id = t.idAlbum AND m.id= :id ");
@@ -21,7 +21,7 @@ $resultat->execute();
 
     <p class="year"><?php echo $tracks['annee']; ?></p>
 
-    <p class="genre"><?php echo $tracks['genre1']; ?> - <?php echo $tracks['genre2']; ?></p>
+    <p class="genre"><?php echo $tracks['genre1']; ?> <?php echo $tracks['genre2']; ?></p>
 
     <!-- la section qui va accueillir le lecteur mp3 -->
     <section class="col-md-6 offset-3 lecteur_mp3">
@@ -37,7 +37,7 @@ $resultat->execute();
             <!-- deuxieme colonne pour le lecteur -->
             <div class="">
                 <div id="sm2-container"></div>
-                <div class="song ui360 exclude button-exclude inline-exclude"><a href="../mp3/<?php echo $tracks['mp3'] ?>"><span class="titre_album"><?php echo $tracks['name']; ?></span></a></div>
+                <div class="song ui360 exclude button-exclude inline-exclude"><a href="mp3/<?php echo $tracks['mp3'] ?>"><span class="titre_album"><?php echo $tracks['name']; ?></span></a></div>
             </div>
 
             <!-- troisieme colonne pour link vers les lyrics -->
@@ -106,5 +106,5 @@ $resultat->execute();
 
 <?php endwhile; ?>
 <?php
-require_once("../include/footer.php");
+require_once("include/footer.php");
 ?>

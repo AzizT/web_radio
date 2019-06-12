@@ -1,6 +1,6 @@
 <?php
 
-require_once("../include/init.php");
+require_once("include/init.php");
 
 $resultat = $bdd->prepare("SELECT * FROM album WHERE annee BETWEEN :annee1 AND :annee2 ORDER BY annee ASC");
 $resultat->bindValue(':annee1', 1950, PDO::PARAM_STR);
@@ -8,7 +8,7 @@ $resultat->bindValue(':annee2', 1969, PDO::PARAM_STR);
 $resultat->execute();
 
 
-require_once("../include/header.php");
+require_once("include/header.php");
 ?>
 
 <h1>50' 60' Albums</h1>
@@ -34,5 +34,5 @@ require_once("../include/header.php");
 
 
 <?php
-require_once("../include/footer.php");
+require_once("include/footer.php");
 ?>

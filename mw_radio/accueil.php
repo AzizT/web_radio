@@ -54,27 +54,27 @@ require_once("include/init.php");
                                                         <!-- d' abord les onglets tracks classés par decennies -->
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="50_60_tracks/Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="70_tracks/Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="80_tracks/Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="90_tracks/Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="00_tracks/Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="10_tracks/Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
                                                         </li>
 
                                                         <!-- onglet déroulant pour les Web Radios -->
@@ -116,27 +116,27 @@ require_once("include/init.php");
 
                                                         <li class="nav-item">
 
-                                                                <a class="nav-link" href="50_60_tracks/Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="70_tracks/Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="80_tracks/Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="90_tracks/Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="00_tracks/Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="10_tracks/Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
+                                                                <a class="nav-link" href="Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
                                                         </li>
 
                                                         <!-- puis le menu déroulant pour les web radios -->
