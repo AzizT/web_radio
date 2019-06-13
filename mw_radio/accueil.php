@@ -54,27 +54,27 @@ require_once("include/init.php");
                                                         <!-- d' abord les onglets tracks classés par decennies -->
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
                                                         </li>
 
                                                         <!-- onglet déroulant pour les Web Radios -->
@@ -103,10 +103,10 @@ require_once("include/init.php");
                                                         <!-- les onglets fonctionnalités pour l' utilisateur connecté -->
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="admin/profil.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-music"></i> <strong><?= $_SESSION['membre']['username'] ?></strong></button></a>
+                                                                <a class="nav-link" href="navigation_interne/profil.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-music"></i> <strong><?= $_SESSION['membre']['username'] ?></strong></button></a>
                                                         </li>
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="<?= URL ?>admin/connexion_membre.php?action=deconnexion"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Deconnexion</button></a>
+                                                                <a class="nav-link" href="<?= URL ?>navigation_interne/connexion_membre.php?action=deconnexion"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Deconnexion</button></a>
                                                         </li>
 
                                                         <!-- fin des onglets pour l' utilisateur connecté et début de ceux pour celui qui ne l' est pas encore -->
@@ -116,27 +116,27 @@ require_once("include/init.php");
 
                                                         <li class="nav-item">
 
-                                                                <a class="nav-link" href="Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Tracks</button></a>
                                                         </li>
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
+                                                                <a class="nav-link" href="navigation_interne/Index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Tracks</button></a>
                                                         </li>
 
                                                         <!-- puis le menu déroulant pour les web radios -->
@@ -165,10 +165,10 @@ require_once("include/init.php");
                                                         <!-- et je termine avec les fonctionnalités pour s' inscrire ou se connecter -->
 
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="admin/inscription_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-sign-in-alt"></i> Inscription</button></a>
+                                                                <a class="nav-link" href="navigation_interne/inscription_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-sign-in-alt"></i> Inscription</button></a>
                                                         </li>
                                                         <li class="nav-item">
-                                                                <a class="nav-link" href="admin/connexion_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Connexion</button></a>
+                                                                <a class="nav-link" href="navigation_interne/connexion_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Connexion</button></a>
                                                         </li>
 
                                                         <?php endif; ?>

@@ -16,7 +16,7 @@
         <div class="row">
 
             <div class="col-md-1 logo_footer">
-            <a href="accueil.php"><img src="images/disk.png" alt="logo MW Radio"/></a>
+            <a href="../accueil.php"><img src="../images/disk.png" alt="logo MW Radio"/></a>
             </div>
 
             <nav class="col-md-10 liens_footer">
@@ -53,6 +53,6 @@
         crossorigin="anonymous"></script>
 
         <!-- link pour le lecteur mp3 JS -->
-        <script src="lecteurJs/lecteur.js"></script>
+        <script src="../lecteurJs/lecteur.js"></script>
 </body>
 </html>

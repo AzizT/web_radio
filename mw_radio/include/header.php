@@ -19,7 +19,7 @@
     <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
 
     <!-- mon css navigation interne-->
-    <link rel="stylesheet" href="css/style_interne.css">
+    <link rel="stylesheet" href="../css/style_interne.css">
 </head>
 <body id="accueil">
 
@@ -39,7 +39,7 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item ">
-                        <a class="nav-link" href="accueil.php">Accueil MW Radio</a>
+                        <a class="nav-link" href="../accueil.php">Accueil MW Radio</a>
                     </li>
                     <li class="nav-item ">
                             <a class="nav-link" href="index_50_60.php">50' 60' Albums</a>

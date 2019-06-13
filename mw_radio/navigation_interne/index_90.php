@@ -1,6 +1,6 @@
 <?php
 
-require_once("include/init.php");
+require_once("../include/init.php");
 
 $resultat = $bdd->prepare("SELECT * FROM album WHERE annee BETWEEN :annee1 AND :annee2 ORDER BY annee ASC");
 $resultat->bindValue(':annee1', 1990, PDO::PARAM_STR);
@@ -8,7 +8,7 @@ $resultat->bindValue(':annee2', 1999, PDO::PARAM_STR);
 $resultat->execute();
 
 
-require_once("include/header.php");
+require_once("../include/header.php");
 ?>
 
 <h1>90' Albums</h1>
@@ -20,7 +20,7 @@ require_once("include/header.php");
 
         <div class="tile-wrap">
             <a href="fiche_tracks.php?id=<?= $tracks['id'] ?>">
-                <img src="img_lp/<?= $tracks['photo'] ?>" alt="<?= $tracks['name'] . $tracks['genre1'] ?>" class="tile-image" />
+                <img src="../img_lp/<?= $tracks['photo'] ?>" alt="<?= $tracks['name'] . $tracks['genre1'] ?>" class="tile-image" />
                 <div class="tile-text">
                     <h2 class="tile-title"><?= $tracks['interprete'] ?></h2>
                     <p class="tile-description"><?= $tracks['annee'] . '<br>' . $tracks['name'] . '<br>' . $tracks['genre1'] ?></p>
@@ -34,5 +34,5 @@ require_once("include/header.php");
 
 
 <?php
-require_once("include/footer.php");
+require_once("../include/footer.php");
 ?>
