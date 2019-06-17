@@ -64,7 +64,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
 
 
-    <table class="table table-bordered bg-light text-center mb-4">
+    <table class="table table-bordered col-md-10 mx-auto bg-light text-center administration">
         <tr>
 
             <?php foreach ($albums[0] as $key => $value) : ?>
@@ -137,25 +137,29 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
         }
 
-    $reference = (isset($album_actuel['reference'])) ? $album_actuel['reference'] : '';
+    $name = (isset($album_actuel['name'])) ? $album_actuel['name'] : '';
 
-    $categorie = (isset($album_actuel['categorie'])) ? $album_actuel['categorie'] : '';
+    $annee = (isset($album_actuel['annee'])) ? $album_actuel['annee'] : '';
 
-    $titre = (isset($album_actuel['titre'])) ? $album_actuel['titre'] : '';
-
-    $description = (isset($album_actuel['description'])) ? $album_actuel['description'] : '';
-
-    $couleur = (isset($album_actuel['couleur'])) ? $album_actuel['couleur'] : '';
-
-    $public = (isset($album_actuel['public'])) ? $album_actuel['public'] : '';
-
-    $prix = (isset($album_actuel['prix'])) ? $album_actuel['prix'] : '';
+    $interprete = (isset($album_actuel['interprete'])) ? $album_actuel['interprete'] : '';
 
     $photo = (isset($album_actuel['photo'])) ? $album_actuel['photo'] : '';
 
-    $taille = (isset($album_actuel['taille'])) ? $album_actuel['taille'] : '';
+    $genre1 = (isset($album_actuel['genre1'])) ? $album_actuel['genre1'] : '';
 
-    $stock = (isset($album_actuel['stock'])) ? $album_actuel['stock'] : '';
+    $genre2 = (isset($album_actuel['genre2'])) ? $album_actuel['genre2'] : '';
+
+    $musicien1 = (isset($album_actuel['musicien1'])) ? $album_actuel['musicien1'] : '';
+
+    $musicien2 = (isset($album_actuel['musicien2'])) ? $album_actuel['musicien2'] : '';
+
+    $musicien3 = (isset($album_actuel['musicien3'])) ? $album_actuel['musicien3'] : '';
+
+    $musicien4 = (isset($album_actuel['musicien4'])) ? $album_actuel['musicien4'] : '';
+
+    $musicien5 = (isset($album_actuel['musicien5'])) ? $album_actuel['musicien5'] : '';
+
+    $musicien6 = (isset($album_actuel['musicien6'])) ? $album_actuel['musicien6'] : '';
 
 
 
@@ -174,106 +178,39 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
         <!-- enctype: obligatoire en PHP pour recolter les informations d'1 fichier uploadé -->
 
 
+        <div class="row">
 
-        <div class="form-group">
+            <div class="form-group col-md-6">
 
-            <label for="reference">Référence</label>
+                <label for="name">Nom</label>
 
-            <input type="text" class="form-control" id="reference" placeholder="Enter reference" name="reference" value="<?= $reference ?>">
+                <input type="text" class="form-control" id="reference" placeholder="..." name="name" value="<?= $name ?>">
 
 
 
-        </div>
+            </div>
 
-        <div class="form-group">
+            <div class="form-group col-md-6">
 
-            <label for="categorie">Catégorie</label>
+                <label for="annee">Année</label>
 
-            <input type="text" class="form-control" id="categorie" aria-describedby="" placeholder="Enter categorie" name="categorie" value="<?= $categorie ?>">
+                <input type="text" class="form-control" id="annee" aria-describedby="" placeholder="..." name="annee" value="<?= $annee ?>">
 
+            </div>
+    
         </div>
 
         <div class="row">
 
             <div class="form-group col-md-6">
 
-                <label for="titre">Titre</label>
+                <label for="interprete">Interprete</label>
 
-                <input type="text" class="form-control" id="titre" aria-describedby="" placeholder="Enter titre" name="titre" value="<?= $titre ?>">
+                <input type="text" class="form-control" id="interprete" aria-describedby="" placeholder="..." name="interprete" value="<?= $interprete ?>">
 
 
 
             </div>
-
-            <div class="form-group col-md-6">
-
-                <label for="description">Description</label>
-
-                <input type="text" class="form-control" id="description" aria-describedby="" placeholder="enter description" name="description" value="<?= $description ?>">
-
-            </div>
-
-        </div>
-
-
-
-        <div class="row">
-
-            <div class="form-group col-md-6">
-
-                <label for="couleur">Couleur</label>
-
-                <input type="text" class="form-control" id="couleur" aria-describedby="" placeholder="couleur" name="couleur" value="<?= $couleur ?>">
-
-            </div>
-
-
-
-
-
-            <div class="form-group col-md-6">
-
-                <label for="taille">Taille</label>
-
-                <select class="form-control" id="taille" name="taille" value="">
-
-                    <option>choose</option>
-
-                    <option value="s" <?php if ($taille == 's') echo 'selected'; ?>>S</option>
-
-                    <option value="m" <?php if ($taille == 'm') echo 'selected'; ?>>M</option>
-
-                    <option value="l" <?php if ($taille == 'l') echo 'selected'; ?>>L</option>
-
-                    <option value="xl" <?php if ($taille == 'xl') echo 'selected'; ?>>XL</option>
-
-
-
-                </select>
-
-            </div>
-
-        </div>
-
-        <div class="form-group">
-
-            <label for="public">Public</label>
-
-            <select class="form-control" id="public" name="public" value="">
-
-                <option value="mixte" <?php if ($public == 'mixte') echo 'selected'; ?>>Mixte</option>
-
-                <option value="f" <?php if ($public == 'f') echo 'selected'; ?>>Feminin</option>
-
-                <option value="m" <?php if ($public == 'm') echo 'selected'; ?>>Masculin</option>
-
-            </select>
-
-        </div>
-
-
-
-        <div class="row">
 
             <div class="form-group col-md-6">
 
@@ -293,27 +230,107 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
             <input type="hidden" id="photo_actuelle" name="photo_actuelle" value="<?= $photo ?>">
 
+        </div>
+
+
+
+        <div class="row">
+
+            <div class="form-group col-md-6">
+
+                <label for="genre1">Genre 1</label>
+
+                <input type="text" class="form-control" id="genre1" aria-describedby="" placeholder="..." name="genre1" value="<?= $genre1 ?>">
+
+            </div>
+
+
+
 
 
             <div class="form-group col-md-6">
 
-                <label for="prix">Prix</label>
+                <label for="genre2">Genre 2</label>
 
-                <input type="text" class="form-control" id="prix" aria-describedby="" placeholder="Enter prix" name="prix" value="<?= $prix ?>">
+                <input type="text" class="form-control" id="genre2" aria-describedby="" placeholder="..." name="genre2" value="<?= $genre2 ?>">
 
             </div>
 
         </div>
 
-        <div class="form-group">
+        <div class="row">
 
-            <label for="stock">Stock</label>
+            <div class="form-group col-md-6">
 
-            <input type="text" class="form-control" id="stock" aria-describedby="" placeholder="Enter stock" name="stock" value="<?= $stock ?>">
+                <label for="musicien1">Musicien 1</label>
+
+                <input type="text" class="form-control" id="musicien1" aria-describedby="" placeholder="..." name="musicien1" value="<?= $musicien1 ?>">
+
+            </div>
+
+
+
+
+
+            <div class="form-group col-md-6">
+
+                <label for="musicien2">Musicien 2</label>
+
+                <input type="text" class="form-control" id="musicien2" aria-describedby="" placeholder="..." name="musicien2" value="<?= $musicien2 ?>">
+
+            </div>
 
         </div>
 
-        <button type="submit" class="btn btn-danger col-md-4 offset-md-4"><?= $action ?></button>
+        <div class="row">
+
+            <div class="form-group col-md-6">
+
+                <label for="musicien3">Musicien 3</label>
+
+                <input type="text" class="form-control" id="musicien3" aria-describedby="" placeholder="..." name="musicien3" value="<?= $musicien3 ?>">
+
+            </div>
+
+
+
+
+
+            <div class="form-group col-md-6">
+
+                <label for="musicien4">Musicien 4</label>
+
+                <input type="text" class="form-control" id="musicien4" aria-describedby="" placeholder="..." name="musicien4" value="<?= $musicien4 ?>">
+
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-6">
+
+                <label for="musicien5">Musicien 5</label>
+
+                <input type="text" class="form-control" id="musicien5" aria-describedby="" placeholder="..." name="musicien5" value="<?= $musicien5 ?>">
+
+            </div>
+
+
+
+
+
+            <div class="form-group col-md-6">
+
+                <label for="musicien6">Musicien 6</label>
+
+                <input type="text" class="form-control" id="musicien6" aria-describedby="" placeholder="..." name="musicien6" value="<?= $musicien6 ?>">
+
+            </div>
+
+        </div>
+
+        <button type="submit" class="btn btn-dark col-md-4 offset-md-4 mt-4"><?= $action ?></button>
 
     </form <?php endif; ?>
 

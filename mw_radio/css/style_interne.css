@@ -39,6 +39,10 @@ body, html{
   text-align: right;
   text-shadow: 2px 2px 5px #9f68af !important;
 }
+.administration{
+  margin-bottom: 6rem;
+  font-weight: bold;
+}
 .container-fluid .indication{
   font: 2rem 'satisfy' ;
   margin-left: 1.8vw;
