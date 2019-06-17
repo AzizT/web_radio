@@ -173,13 +173,27 @@ require_once("include/init.php");
 
                                                         <?php endif; ?>
 
-                                                        <!-- fin de la section qui concerne l' internaute non connecté et j' ajoute ci desssous un onglet supplémentaire, pour le connecté, avec statut d' administrateur ( pour l' instant un seul onglet, mais qui pourra etre adapté en  menu déroulant avec plusieurs onglets selon les besoins-->
+                                                        <!-- fin de la section qui concerne l' internaute non connecté et j' ajoute ci desssous un onglet supplémentaire, pour le connecté, avec statut d' administrateur
+                                                        A nouveau un menu déroulant pour différents aspects de la bdd-->
 
                                                         <?php if (internauteEstConnecteEstAdmin()) : ?>
 
-                                                        <li class="nav-item">
-                                                                <a class="nav-link" href="admin/gestion_site.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-user-cog"></i> Administration</button></a>
-                                                        </li>
+                                                        <li class="nav-item dropdown">
+
+                                                        <a class="nav-link <!--dropdown-toggle-->" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-user-cog"></i> Administration</button>
+                                                        </a>
+
+                                                        <div class="dropdown-menu text text-center" aria-labelledby="navbarDropdown">
+
+                                                                <a class="dropdown-item" href="admin/gestion_album.php"><button class="btn btn-sm" type="button">Gestion Album</button></a>
+
+                                                                <a class="dropdown-item" href="admin/gestion_track.php"><button class="btn btn-sm" type="button">Gestion Track</button></a>
+
+                                                                <a class="dropdown-item" href="admin/gestion_membre.php"><button class="btn btn-sm" type="button">Gestion Membre</button></a>
+
+                                                        </div>
+                                                </li>
 
                                                         <?php endif; ?>
                                                         <!-- fin du panneau administrateur -->
