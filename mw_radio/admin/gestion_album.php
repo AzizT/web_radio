@@ -1,18 +1,17 @@
-
 <?php
-    require_once("../include/header.php");
-    require_once("../include/init.php");
-    extract($_POST);
+require_once("../include/header.php");
+require_once("../include/init.php");
+extract($_POST);
 
-    extract($_GET);
+extract($_GET);
 
-    // si l'internaute n'est pas connecté et n'est pas ADMIN, il n'a rien à faire ici, on le redirige vers la page connexion.php
-    if (!internauteEstConnecteEstAdmin()) {
+// si l'internaute n'est pas connecté et n'est pas ADMIN, il n'a rien à faire ici, on le redirige vers la page connexion.php
+if (!internauteEstConnecteEstAdmin()) {
 
-        header("Location:" . URL . "connexion_membre.php");
-    }
+    header("Location:" . URL . "connexion_membre.php");
+}
 
-    // ---------------SUPPRESSION D' ALBUM'-----------------------
+// ---------------SUPPRESSION D' ALBUM'-----------------------
 
 if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
@@ -32,17 +31,17 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
 
 
-    ?>
+?>
 
-    <!-- LIEN albums -->
+<!-- LIEN albums -->
 
 <ul class="col-md-4 offset-md-4 list-group mt-4 text-center">
 
-<li class="list-group-item bg-dark text-center text-white">BACK OFFICE</li>
+    <li class="list-group-item bg-dark text-center text-white">BACK OFFICE</li>
 
-<li class="list-group-item"><a href="?action=affichage" class="alert-link text-dark">AFFICHAGE ALBUMS</a></li>
+    <li class="list-group-item"><a href="?action=affichage" class="alert-link text-dark">AFFICHAGE ALBUMS</a></li>
 
-<li class="list-group-item"><a href="?action=ajout" class="alert-link text-dark">AJOUT ALBUM</a></li>
+    <li class="list-group-item"><a href="?action=ajout" class="alert-link text-dark">AJOUT ALBUM</a></li>
 
 
 
@@ -91,7 +90,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
                     <?php else : ?>
 
-                        <td><img src="<?= $value ?>" alt="" class="card-img-top"></td>
+                        <td><img src="../img_lp/<?= $value ?>" alt=""></td>
 
                     <?php endif; ?>
 
@@ -127,15 +126,14 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
     if (isset($_GET['id'])) {
 
-            $resultat = $bdd->prepare("SELECT * FROM album WHERE  id = :id");
+        $resultat = $bdd->prepare("SELECT * FROM album WHERE  id = :id");
 
-            $resultat->bindValue(':id', $id, PDO::PARAM_INT);
+        $resultat->bindValue(':id', $id, PDO::PARAM_INT);
 
-            $resultat->execute();
+        $resultat->execute();
 
-            $album_actuel = $resultat->fetch(PDO::FETCH_ASSOC);
-
-        }
+        $album_actuel = $resultat->fetch(PDO::FETCH_ASSOC);
+    }
 
     $name = (isset($album_actuel['name'])) ? $album_actuel['name'] : '';
 
@@ -167,9 +165,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
     <!-- 
 
-        1.Réaliser un formulaire permettant d'inserer un produit dans la table 'produit(sauf le champs: id_produit'
+            1.Réaliser un formulaire permettant d'inserer un produit dans la table 'produit(sauf le champs: id_produit'
 
-     -->
+         -->
 
 
 
@@ -197,7 +195,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
                 <input type="text" class="form-control" id="annee" aria-describedby="" placeholder="..." name="annee" value="<?= $annee ?>">
 
             </div>
-    
+
         </div>
 
         <div class="row">
@@ -332,12 +330,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
         <button type="submit" class="btn btn-dark col-md-4 offset-md-4 mt-4"><?= $action ?></button>
 
-    </form <?php endif; ?>
-
-
-
-
-
-    <?php
-require_once("../include/footer.php");
-?>
+    </form <?php endif; ?> <?php
+                        require_once("../include/footer.php");
+                        ?>
