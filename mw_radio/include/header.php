@@ -24,7 +24,7 @@
 
     <header id="haut">
 
-        <nav class="navbar navbar-lg navbar-light bg-light col-md-1">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light col-md-12">
             <!-- si je veux remettre une nav expand, ligne de code ci dessous + modifier le css -->
             <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
 
@@ -37,50 +37,50 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item ">
-                        <a class="nav-link" href="../accueil.php">Accueil MW Radio</a>
+                        <a class="nav-link" href="../accueil.php"><button class="btn btn-sm btn-outline-success" type="button">Accueil MW Radio</button></a>
                     </li>
 
                     <?php
                     if (isset($_GET['action']) && ($_GET['action'] == 'affichage') || isset($_GET['action']) && ($_GET['action'] == 'ajout') || isset($_GET['page']) && ($_GET['page'] == 'admin/gestion_album.php')) : ?>
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="../navigation_interne/index_50_60.php">50' 60' Albums</a>
+                            <a class="nav-link" href="../navigation_interne/index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Albums</button></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="../index_70.php">70' Albums</a>
+                            <a class="nav-link" href="../index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Albums</button></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="../index_80.php">80' Albums</a>
+                            <a class="nav-link" href="../index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Albums</button></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="../index_90.php">90' Albums</a>
+                            <a class="nav-link" href="../index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Albums</button></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="../index_00.php">2000' Albums</a>
+                            <a class="nav-link" href="../index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Albums</button></a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="../index_10.php">2010' Albums</a>
+                            <a class="nav-link" href="../index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Albums</button></a>
                         </li>
 
                     <?php endif; ?>
 
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_50_60.php">50' 60' Albums</a>
+                        <a class="nav-link" href="index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_70.php">70' Albums</a>
+                        <a class="nav-link" href="index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_80.php">80' Albums</a>
+                        <a class="nav-link" href="index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_90.php">90' Albums</a>
+                        <a class="nav-link" href="index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_00.php">2000' Albums</a>
+                        <a class="nav-link" href="index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_10.php">2010' Albums</a>
+                        <a class="nav-link" href="index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Albums</button></a>
                     </li>
 
                 </ul>
