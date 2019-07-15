@@ -1,5 +1,5 @@
 <?php
-require_once("../include/header.php");
+require_once("../include/header2.php");
 require_once("../include/init.php");
 extract($_POST);
 

@@ -41,22 +41,22 @@
                     </li>
 
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Albums</button></a>
+                        <a class="nav-link" href="../index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Albums</button></a>
+                        <a class="nav-link" href="../index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Albums</button></a>
+                        <a class="nav-link" href="../index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Albums</button></a>
+                        <a class="nav-link" href="../index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Albums</button></a>
+                        <a class="nav-link" href="../index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Albums</button></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link" href="index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Albums</button></a>
+                        <a class="nav-link" href="../index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Albums</button></a>
                     </li>
 
                 </ul>

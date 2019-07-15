@@ -93,6 +93,15 @@ footer i{
   font-size: 1rem;
   transition: 1.2s;
 }
+.home-button{
+  background-color: purple;
+  color: white !important;
+  transition: 1.2s;
+}
+.home-button:hover{
+  background-color: white !important;
+  color: purple !important;
+}
 .navbar button:hover{
   background-color: purple;
   color: white;

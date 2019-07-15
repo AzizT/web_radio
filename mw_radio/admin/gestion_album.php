@@ -1,5 +1,5 @@
 <?php
-require_once("../include/header.php");
+require_once("../include/header2.php");
 require_once("../include/init.php");
 extract($_POST);
 
@@ -63,8 +63,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
 
 
-    <table class="table table-bordered col-md-10 mx-auto bg-light text-center administration">
+    <table class="table table-bordered col-md-12 mx-auto bg-dark text text-light text-center administration">
         <tr>
+
+            <th>MODIFIER</th>
+
+            <th>SUPPRIMER</th>
 
             <?php foreach ($albums[0] as $key => $value) : ?>
 
@@ -72,15 +76,17 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
             <?php endforeach; ?>
 
-            <th>MODIFIER</th>
 
-            <th>SUPPRIMER</th>
 
         </tr>
 
         <?php foreach ($albums as $key => $tab) : ?>
 
             <tr>
+
+                <td><a href="?action=modification&id=<?= $tab['id'] ?>" class="text-light" onclick="return(confirm('En êtes vous certain ?'))"><i class="fas fa-edit"></i></a></td>
+
+                <td><a href="?action=suppression&id=<?= $tab['id'] ?>" class="text-danger" onclick="return(confirm('En êtes vous certain ?'))"><i class="fas fa-trash-alt"></i></a></td>
 
                 <?php foreach ($tab as $key2 => $value) : ?>
 
@@ -90,15 +96,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
                     <?php else : ?>
 
-                        <td><img src="../img_lp/<?= $value ?>" alt=""></td>
+                        <td><img src="../img_lp/<?= $value ?>" alt="" height=" 80px"></td>
 
                     <?php endif; ?>
 
                 <?php endforeach; ?>
 
-                <td><a href="?action=modification&id=<?= $tab['id'] ?>" class="text-dark"><i class="fas fa-edit"></i></a></td>
 
-                <td><a href="?action=suppression&id=<?= $tab['id'] ?>" class="text-danger" onclick="return(confirm('En êtes vous certain ?'))"><i class="fas fa-trash-alt"></i></a></td>
 
 
 
@@ -165,9 +169,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
     <!-- 
 
-            1.Réaliser un formulaire permettant d'inserer un produit dans la table 'produit(sauf le champs: id_produit'
+                    1.Réaliser un formulaire permettant d'inserer un produit dans la table 'produit(sauf le champs: id_produit'
 
-         -->
+                 -->
 
 
 

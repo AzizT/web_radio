@@ -15,7 +15,7 @@ $album = $resultat->fetch(PDO::FETCH_ASSOC);
 
 
 
-$resultat = $bdd->prepare("SELECT * FROM album as m, track as t WHERE m.id = t.idAlbum AND m.id= :id ");
+$resultat = $bdd->prepare("SELECT * FROM album as a, track as t WHERE a.id = t.idAlbum AND a.id= :id ");
 // $resultat = $bdd->prepare("SELECT * FROM tracks WHERE id_tracks = :id_tracks");
 $resultat->bindValue(':id', $_GET['id'], PDO::PARAM_STR);
 $resultat->execute();
