@@ -233,6 +233,34 @@ adapté le css, notamment avec de la transparence */
    color: purple;
    text-shadow: 2px 2px 2px black !important;
  }
+ 
+.gestion_globale{
+  padding-top: 15vh;
+}
+ .gestion_globale a{
+   font-size: 1.5rem;
+   color: white;
+   font-weight: bold;
+   transition: .4s;
+ }
+ .gestion_globale a:hover{
+   text-decoration: none;
+   color: rgb(228, 228, 228);
+ }
+
+ .gestion_speciale{
+  padding-top: 15vh;
+}
+ .gestion_speciale a{
+   font-size: 1.5rem;
+   color: white;
+   font-weight: bold;
+   transition: .4s;
+ }
+ .gestion_speciale a:hover{
+   text-decoration: none;
+   color: rgb(228, 228, 228);
+ }
 
  /* *******************************lecteur JS************************************************** */
  /******************* trouvé sur codepen https://codepen.io/abhijit_mishra/pen/zZzNBr ************************************/

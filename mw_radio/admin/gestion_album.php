@@ -35,13 +35,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
 <!-- LIEN albums -->
 
-<ul class="col-md-4 offset-md-4 list-group mt-4 text-center">
+<ul class="col-md-4 offset-md-4 list-group text-center mt-4 gestion_speciale">
 
-    <li class="list-group-item bg-dark text-center text-white">BACK OFFICE</li>
+    <li class="list-group-item mt-4 bg-dark text-white"><a href="gestion_globale.php">BACK OFFICE</a></li>
 
-    <li class="list-group-item"><a href="?action=affichage" class="alert-link text-dark">AFFICHAGE ALBUMS</a></li>
+    <li class="list-group-item mt-4"><a href="?action=affichage" class="alert-link text-dark">AFFICHAGE ALBUMS</a></li>
 
-    <li class="list-group-item"><a href="?action=ajout" class="alert-link text-dark">AJOUT ALBUM</a></li>
+    <li class="list-group-item mt-4"><a href="?action=ajout" class="alert-link text-dark">AJOUT ALBUM</a></li>
 
 
 
@@ -334,6 +334,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
         <button type="submit" class="btn btn-dark col-md-4 offset-md-4 mt-4"><?= $action ?></button>
 
-    </form <?php endif; ?> <?php
+</form> <?php endif; ?> <?php
                         require_once("../include/footer.php");
                         ?>

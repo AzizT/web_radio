@@ -32,51 +32,51 @@ require_once("include/init.php");
                 <!-- ***********************************************début du lecteur JS**********************************
         Je le situe ici dans mon code, en dehors du header, car j' ai besoin qu' il prenne 100% de la largeur, alors que le header va couvrir 75 % -->
 
-        <div class="row">
+                <div class="row">
 
-                <div class="info">
+                        <div class="info">
 
-                </div>
-
-                <div class="radio-app">
-                        <div class="left-panel">
-                                <div>
-                                        <img src="https://www.gsiamidis.com/projects/thewebradio/station-playing.svg" class="equalizer" width="30px" height="auto" alt="Playing">
-                                </div>
-                                <div class="songs-titles">
-                                        <p class="highlighted">NOW PLAYING</p>
-                                        <p id="nowPlaying">...</p>
-                                </div>
-                        </div>
-                        <div class="middle-panel">
-                                <div class="volume-icon"><img src="images/icone_volume.png" alt=""></div>
-                                <input type="range" id="radioVolume" min="0" max="1" step="0.01" value="0.5">
                         </div>
 
-                        <!-- <i class="fas fa-volume-up"> </i>-->
-
-                        <div class="right-panel">
-                                <div>
-                                        <p class="highlighted">Hit Me With Music !</p>
-                                        <p>Cliquer Pour Ecouter</p>
-                                </div>
-                                <div class="select-station">
-                                        <div id="stationLoading">
-                                                <div>Connecting</div>
-                                                <div><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/station-loading.svg" width="30px" height="auto" alt="Γίνεται Σύνδεση"></div>
+                        <div class="radio-app">
+                                <div class="left-panel">
+                                        <div>
+                                                <img src="https://www.gsiamidis.com/projects/thewebradio/station-playing.svg" class="equalizer" width="30px" height="auto" alt="Playing">
                                         </div>
-                                        <ul id="selectStation">
-                                                <li id="authentiko" class="playing-station"><img src="images/disk2.png" width="70px" height="70px" alt="Σταθμός: Αυθεντικό"></li>
-                                                <!-- <li id="greeks"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/greeks-station.png" width="70px" height="70px" alt="Σταθμός: Γκρικς"></li> -->
-                                                <!-- <li id="fresh"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/fresh-station.png" width="70px" height="70px" alt="Σταθμός: Fresh"></li> -->
-                                                <!-- <li id="coffee"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/coffee-station.png" width="70px" height="70px" alt="Σταθμός: Coffee"></li> -->
-                                        </ul>
+                                        <div class="songs-titles">
+                                                <p class="highlighted">NOW PLAYING</p>
+                                                <p id="nowPlaying">...</p>
+                                        </div>
+                                </div>
+                                <div class="middle-panel">
+                                        <div class="volume-icon"><img src="images/icone_volume.png" alt=""></div>
+                                        <input type="range" id="radioVolume" min="0" max="1" step="0.01" value="0.5">
+                                </div>
+
+                                <!-- <i class="fas fa-volume-up"> </i>-->
+
+                                <div class="right-panel">
+                                        <div>
+                                                <p class="highlighted">Hit Me With Music !</p>
+                                                <p>Cliquer Pour Ecouter</p>
+                                        </div>
+                                        <div class="select-station">
+                                                <div id="stationLoading">
+                                                        <div>Connecting</div>
+                                                        <div><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/station-loading.svg" width="30px" height="auto" alt="Γίνεται Σύνδεση"></div>
+                                                </div>
+                                                <ul id="selectStation">
+                                                        <li id="authentiko" class="playing-station"><img src="images/disk2.png" width="70px" height="70px" alt="Σταθμός: Αυθεντικό"></li>
+                                                        <!-- <li id="greeks"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/greeks-station.png" width="70px" height="70px" alt="Σταθμός: Γκρικς"></li> -->
+                                                        <!-- <li id="fresh"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/fresh-station.png" width="70px" height="70px" alt="Σταθμός: Fresh"></li> -->
+                                                        <!-- <li id="coffee"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/coffee-station.png" width="70px" height="70px" alt="Σταθμός: Coffee"></li> -->
+                                                </ul>
+                                        </div>
                                 </div>
                         </div>
-                </div>
-                <!-- ****************************************************fin du lecteur JS******************************************* -->
+                        <!-- ****************************************************fin du lecteur JS******************************************* -->
 
-        </div>
+                </div>
 
         </section>
 
@@ -239,21 +239,8 @@ require_once("include/init.php");
 
                                                         <?php if (internauteEstConnecteEstAdmin()) : ?>
 
-                                                                <li class="nav-item dropdown">
-
-                                                                        <a class="nav-link <!--dropdown-toggle-->" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                                                <button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-user-cog"></i> Administration</button>
-                                                                        </a>
-
-                                                                        <div class="dropdown-menu text text-center" aria-labelledby="navbarDropdown">
-
-                                                                                <a class="dropdown-item" href="admin/gestion_album.php"><button class="btn btn-sm" type="button">Gestion Album</button></a>
-
-                                                                                <a class="dropdown-item" href="admin/gestion_track.php"><button class="btn btn-sm" type="button">Gestion Track</button></a>
-
-                                                                                <a class="dropdown-item" href="admin/gestion_membre.php"><button class="btn btn-sm" type="button">Gestion Membre</button></a>
-
-                                                                        </div>
+                                                                <li class="nav-item">
+                                                                        <a class="nav-link" href="admin/gestion_globale.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-user-cog"></i> Administration</button></a>
                                                                 </li>
 
                                                         <?php endif; ?>
