@@ -29,52 +29,37 @@ require_once("include/init.php");
 
         <section class="container-fluid">
 
-                <!-- ***********************************************début du lecteur JS**********************************
-        Je le situe ici dans mon code, en dehors du header, car j' ai besoin qu' il prenne 100% de la largeur, alors que le header va couvrir 75 % -->
+                <?php
+                $resultat = $bdd->prepare("SELECT * FROM track as t, album as a WHERE a.id = t.idAlbum ORDER BY RAND()");
+                $resultat->execute();
+                $tracks = $resultat->fetch(PDO::FETCH_ASSOC);
+                ?>
 
-                <div class="row">
+                <!-- la section qui va accueillir le lecteur mp3 -->
+                <section class="lecteur_mp3">
 
-                        <div class="info">
+                        <!-- une row par titre -->
+                        <div class="row col-md-12 ">
+
+                                <!-- première colonne pour le titre -->
+                                <div class="col-md-6 pt-3">
+                                        <span><?php echo $tracks['interprete']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $tracks['title']; ?></span>
+                                </div>
+
+                                <!-- deuxieme colonne pour le lecteur -->
+                                <div class="">
+                                        <div id="sm2-container"></div>
+                                        <div class="song ui360 exclude button-exclude inline-exclude"><a href="mp3/<?php echo $tracks['mp3'] ?>"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $tracks['name']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <?php echo $tracks['annee']; ?></span></a></div>
+                                </div>
+
 
                         </div>
+                        <!-- fermeture de row -->
 
-                        <div class="radio-app">
-                                <div class="left-panel">
-                                        <div>
-                                                <img src="https://www.gsiamidis.com/projects/thewebradio/station-playing.svg" class="equalizer" width="30px" height="auto" alt="Playing">
-                                        </div>
-                                        <div class="songs-titles">
-                                                <p class="highlighted">NOW PLAYING</p>
-                                                <p id="nowPlaying">...</p>
-                                        </div>
-                                </div>
-                                <div class="middle-panel">
-                                        <div class="volume-icon"><img src="images/icone_volume.png" alt=""></div>
-                                        <input type="range" id="radioVolume" min="0" max="1" step="0.01" value="0.5">
-                                </div>
+                </section>
+                <!-- ******************************************fin du lecteur mp3***************************** -->
 
-                                <!-- <i class="fas fa-volume-up"> </i>-->
 
-                                <div class="right-panel">
-                                        <div>
-                                                <p class="highlighted">Hit Me With Music !</p>
-                                                <p>Cliquer Pour Ecouter</p>
-                                        </div>
-                                        <div class="select-station">
-                                                <div id="stationLoading">
-                                                        <div>Connecting</div>
-                                                        <div><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/station-loading.svg" width="30px" height="auto" alt="Γίνεται Σύνδεση"></div>
-                                                </div>
-                                                <ul id="selectStation">
-                                                        <li id="authentiko" class="playing-station"><img src="images/disk2.png" width="70px" height="70px" alt="Σταθμός: Αυθεντικό"></li>
-                                                        <!-- <li id="greeks"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/greeks-station.png" width="70px" height="70px" alt="Σταθμός: Γκρικς"></li> -->
-                                                        <!-- <li id="fresh"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/fresh-station.png" width="70px" height="70px" alt="Σταθμός: Fresh"></li> -->
-                                                        <!-- <li id="coffee"><img src="https://www.thewebradio.gr/wp-content/themes/child/assets/coffee-station.png" width="70px" height="70px" alt="Σταθμός: Coffee"></li> -->
-                                                </ul>
-                                        </div>
-                                </div>
-                        </div>
-                        <!-- ****************************************************fin du lecteur JS******************************************* -->
 
                 </div>
 
@@ -297,8 +282,9 @@ require_once("include/init.php");
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.15/howler.min.js'></script>
 
+
         <!-- link pour le lecteur mp3 JS -->
-        <script src="lecteurJs/lecteur-accueil.js"></script>
+        <script src="lecteurJs/lecteur.js"></script>
 
 </body>
 
