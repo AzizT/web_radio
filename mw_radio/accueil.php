@@ -263,7 +263,7 @@ require_once("include/init.php");
                 <footer id="piedPage">
                         <p>
                                 "Information is not knowledge. Knowledge is not wisdom. Wisdom is not truth. Truth is not beauty. Beauty is not love. Love is not music. Music is THE BEST."-FZ.<br />
-                                © Powered by Mézigue & Fils - 2018</p>
+                                © Powered by FATZ Studios - 2019</p>
                 </footer>
 
                 <!-- fin du footer -->
