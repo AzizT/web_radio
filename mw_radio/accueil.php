@@ -6,10 +6,12 @@ require_once("include/init.php");
 <html lang="fr">
 
 <head>
-        <title>Accueil Mad Wax Radio</title>
+        <title>Mad Wax Radio</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <link rel="icon" type="image/png" href="logo.png" />
 
         <!-- link bootstrap -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -27,7 +29,7 @@ require_once("include/init.php");
 <body>
 
 
-        <section class="container-fluid">
+        <section class="container-fluid barre_lecteur">
 
                 <?php
                 $resultat = $bdd->prepare("SELECT * FROM track as t, album as a WHERE a.id = t.idAlbum ORDER BY RAND()");
