@@ -1,34 +1,3 @@
-/** @license
- *
- * SoundManager 2: JavaScript Sound for the Web
- * ----------------------------------------------
- * http://schillmania.com/projects/soundmanager2/
- *
- * Copyright (c) 2007, Scott Schiller. All rights reserved.
- * Code provided under the BSD License:
- * http://schillmania.com/projects/soundmanager2/license.txt
- *
- * V2.97a.20130101
- */
-
-/*global window, SM2_DEFER, sm2Debugger, console, document, navigator, setTimeout, setInterval, clearInterval, Audio, opera */
-/*jslint regexp: true, sloppy: true, white: true, nomen: true, plusplus: true */
-
-/**
- * About this file
- * -------------------------------------------------------------------------------------
- * This is the fully-commented source version of the SoundManager 2 API,
- * recommended for use during development and testing.
- *
- * See soundmanager2-nodebug-jsmin.js for an optimized build (~11KB with gzip.)
- * http://schillmania.com/projects/soundmanager2/doc/getstarted/#basic-inclusion
- * Alternately, serve this file with gzip for 75% compression savings (~30KB over HTTP.)
- *
- * You may notice <d> and </d> comments in this source; these are delimiters for
- * debug blocks which are removed in the -nodebug builds, further optimizing code size.
- *
- * Also, as you may note: Whoa, reliable cross-platform/device audio support is hard! ;)
- */
 
 (function (window, _undefined) {
 
