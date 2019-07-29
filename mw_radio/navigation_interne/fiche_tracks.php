@@ -98,7 +98,7 @@ $resultat->execute();
 
     <section class="container-fluid commentaire">
         <div class="form-group">
-            <label for="comment" class="offset-md-3"><?= $_SESSION['membre']['username'] ?> , laissez un commentaire !</label>
+            <label for="comment" class="offset-md-3"><?= $_SESSION['membre']['pseudo'] ?> , laissez un commentaire !</label>
             <textarea class="form-control col-md-6 mx-auto comment" id="comment" rows="1" placeholder="..."></textarea>
         </div>
     </section>
