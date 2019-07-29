@@ -27,8 +27,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'validate') {
 if ($_POST) {
     // on selectionne tout dans la table membre, a condition que la colonne pseudo/email ou similaire a celle saisie dans le formulaire
 
-    $verif_pseudo_email = $bdd->prepare("SELECT*FROM membre WHERE username = :username || email = :email");
-    $verif_pseudo_email->bindValue(':username', $email_pseudo, PDO::PARAM_STR);
+    $verif_pseudo_email = $bdd->prepare("SELECT*FROM membre WHERE pseudo = :pseudo || email = :email");
+    $verif_pseudo_email->bindValue(':pseudo', $email_pseudo, PDO::PARAM_STR);
     $verif_pseudo_email->bindValue(':email', $email_pseudo, PDO::PARAM_STR);
     $verif_pseudo_email->execute();
 
@@ -47,9 +47,9 @@ if ($_POST) {
 
 
         // on entre dans ce ifi seulement si l' utilisateur a entré les bonnes données ( email, pseudo, mdp)
-        if ($membre['password'] == $password) {
+        if ($membre['mdp'] == $password) {
             foreach ($membre as $key => $value) {
-                if ($key != 'password')
+                if ($key != 'mdp')
                 // on ejecte le mdp de la liste de vérif car c' est une donnée sensible
                 {
                     $_SESSION['membre'][$key] = $value;

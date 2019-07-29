@@ -1,3 +1,6 @@
+<?php
+require_once("../include/init.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -36,28 +39,80 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
 
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../accueil.php"><button class="btn btn-sm btn-outline-success home-button" type="button">Accueil MW Radio</button></a>
-                    </li>
+                    <?php if (internauteEstConnecte()) : ?>
 
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Albums</button></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Albums</button></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Albums</button></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Albums</button></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Albums</button></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Albums</button></a>
-                    </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="../accueil.php"><button class="btn btn-sm btn-outline-success home-button" type="button">Accueil MW Radio</button></a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Albums</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="profil.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-music"></i> <strong><?= $_SESSION['membre']['pseudo'] ?></strong></button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= URL ?>connexion_membre.php?action=deconnexion"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Deconnexion</button></a>
+                        </li>
+
+                    <?php else : ?>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="../accueil.php"><button class="btn btn-sm btn-outline-success home-button" type="button">Accueil MW Radio</button></a>
+                        </li>
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_50_60.php"><button class="btn btn-sm btn-outline-success" type="button">50' 60' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_70.php"><button class="btn btn-sm btn-outline-success" type="button">70' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_80.php"><button class="btn btn-sm btn-outline-success" type="button">80' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_90.php"><button class="btn btn-sm btn-outline-success" type="button">90' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_00.php"><button class="btn btn-sm btn-outline-success" type="button">00' Albums</button></a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="index_10.php"><button class="btn btn-sm btn-outline-success" type="button">10' Albums</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inscription_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-sign-in-alt"></i> Inscription</button></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="connexion_membre.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Connexion</button></a>
+                        </li>
+
+                    <?php endif; ?>
+
+                    <!-- fin de la section qui concerne l' internaute non connecté et j' ajoute ci desssous un onglet supplémentaire, pour le connecté, avec statut d' administrateur-->
+
+                    <?php if (internauteEstConnecteEstAdmin()) : ?>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../admin/gestion_globale.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-user-cog"></i> Administration</button></a>
+                        </li>
+
+                    <?php endif; ?>
+                    <!-- fin du panneau administrateur -->
 
                 </ul>
             </div>

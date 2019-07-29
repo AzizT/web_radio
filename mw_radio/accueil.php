@@ -97,7 +97,7 @@ require_once("include/init.php");
                                                         <?php if (internauteEstConnecte()) : ?>
 
                                                                 <!-- je donne les autorisations a l' utilisateur connecté, et je lui retire le reste
-                                                                                                                ici, je lui donne l' autorisation pour profil + se deconnecter , en plus de la biblioteheque tracks-->
+                                                                ici, je lui donne l' autorisation pour profil + se deconnecter , en plus de la biblioteheque tracks-->
 
                                                                 <!-- d' abord les onglets tracks classés par decennies -->
 
@@ -151,7 +151,7 @@ require_once("include/init.php");
                                                                 <!-- les onglets fonctionnalités pour l' utilisateur connecté -->
 
                                                                 <li class="nav-item">
-                                                                        <a class="nav-link" href="navigation_interne/profil.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-music"></i> <strong><?= $_SESSION['membre']['username'] ?></strong></button></a>
+                                                                        <a class="nav-link" href="navigation_interne/profil.php"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-music"></i> <strong><?= $_SESSION['membre']['pseudo'] ?></strong></button></a>
                                                                 </li>
                                                                 <li class="nav-item">
                                                                         <a class="nav-link" href="<?= URL ?>navigation_interne/connexion_membre.php?action=deconnexion"><button class="btn btn-sm btn-outline-success" type="button"><i class="fas fa-power-off"></i> Deconnexion</button></a>
@@ -221,8 +221,7 @@ require_once("include/init.php");
 
                                                         <?php endif; ?>
 
-                                                        <!-- fin de la section qui concerne l' internaute non connecté et j' ajoute ci desssous un onglet supplémentaire, pour le connecté, avec statut d' administrateur
-                                                        A nouveau un menu déroulant pour différents aspects de la bdd-->
+                                                        <!-- fin de la section qui concerne l' internaute non connecté et j' ajoute ci desssous un onglet supplémentaire, pour le connecté, avec statut d' administrateur-->
 
                                                         <?php if (internauteEstConnecteEstAdmin()) : ?>
 

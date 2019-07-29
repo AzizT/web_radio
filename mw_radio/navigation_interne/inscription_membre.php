@@ -54,8 +54,11 @@
                         $data_insert->bindValue(":$key", $value, PDO::PARAM_STR);
                     }
             }
+            $data_insert->execute();
+
+            header("Location: connexion_membre.php?action=validate");
         }
-        $data_insert->execute();
+        
 
     }
 
