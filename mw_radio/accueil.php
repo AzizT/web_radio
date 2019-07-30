@@ -49,13 +49,13 @@ require_once("include/init.php");
 
 
                                 <!-- deuxieme colonne pour le lecteur -->
-                                <div class="row pt-2 pl-2">
+                                <div class="row pt-2 pl-3">
                                         <div id="sm2-container"></div>
-                                        <div class="song ui360 exclude button-exclude inline-exclude"><a href="mp3/<?php echo $tracks['mp3'] ?>"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $tracks['interprete']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <?php echo $tracks['annee']; ?></span></a></div>
+                                        <div class="song ui360 exclude button-exclude inline-exclude"><a href="mp3/<?php echo $tracks['mp3'] ?>"><span class="pl-4 pr-2"><?php echo $tracks['interprete']; ?></span><span> - </span><span class="pl-2"><?php echo $tracks['annee']; ?></span></a></div>
                                 </div>
 
-                                <div class="row pt-2 pl-2"><span class="title_tracks"><?php echo $tracks['title']; ?></span></div>
-                                <div class="row pt-2 pl-2"><span class="titre_album"><?php echo $tracks['name']; ?></span></div>
+                                <div class="row pt-2 pl-2"><span class="title_tracks mx-auto pt-4"><?php echo $tracks['title']; ?></span></div>
+                                <div class="row pt-2 pl-2"><span class="titre_album mx-auto pt-2"><?php echo $tracks['name']; ?></span></div>
 
 
 
@@ -66,7 +66,7 @@ require_once("include/init.php");
                         <!-- ******************************************fin du lecteur mp3***************************** -->
 
                         <!-- ******************************************début du logo*************************************** -->
-                        <div class="col-md-2 offset-2">
+                        <div class="mx-auto pt-2">
 
                                 <img src="images/logo_bandeau.png" alt="bandeau mw radio" class="" />
 

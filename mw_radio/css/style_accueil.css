@@ -18,7 +18,7 @@ body{
     }
 
 .image_responsive{
-  background-size: cover;
+  box-shadow: 0px 1px 3px #e9bdf7;
 }
 /* début des parametres pour la nav bootstrap et la barre de recherche */
 
@@ -70,22 +70,24 @@ body{
 
  .lecteur_mp3{
    /* margin-left: 20vw; */
-   background-color: rgb(31, 0, 31);
+   background-color: rgb(10, 0, 10);
    box-shadow: 1px 1px 5px #e9bdf7;
    border: 1.5mm groove rgba(170, 50, 220, .6);
    border-radius: 3%;
    font-size: .9rem;
    color: #e9bdf7;
-   height: 18vh;
  }
  .lecteur_mp3 span{
-   font-size: 1.1rem;
    color: #e9bdf7;
    text-shadow: 1px 1px 2px rgb(247, 191, 247) !important;
  }
 
  .lecteur_mp3 .title_tracks{
+   font-size: 1.1rem;
    font-weight: bold;
+ }
+ .lecteur_mp3 .titre_album{
+  font-size: .9rem;
  }
 /**
  * SoundManager 2 + useFlashBlock
@@ -336,11 +338,11 @@ body{
  margin-top:-11px;
 */
  /* by default, cover whole space. make smaller when playing. */
- width:40px;
- height:40px;
+ width:60px;
+ height:60px;
  margin-left:-25px;
  margin-top:-20px;
- border-radius: 25px;
+ border-radius: 50%;
  cursor:pointer;
  z-index:3;
 }
