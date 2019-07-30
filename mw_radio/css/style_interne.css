@@ -528,8 +528,8 @@ adapté le css, notamment avec de la transparence */
  margin-top:-11px;
 */
  /* by default, cover whole space. make smaller when playing. */
- width:50px;
- height:50px;
+ width:35px;
+ height:35px;
  margin-left:-25px;
  margin-top:-25px;
  border-radius: 25px;
@@ -558,14 +558,27 @@ adapté le css, notamment avec de la transparence */
 }
 
 /* this could be optimized a fair bit. */
-
+@keyframes rotationDisque{
+  0% {
+    transform: rotate(-360deg);
+}
+}
+@-webkit-keyframes rotationDisque{
+  0% {
+    transform: rotate(-360deg);
+}
+}
 .ui360,
 .ui360 .sm2-360btn-default,
 .ui360 .sm2-360ui.sm2_paused .sm2-360btn {
- background:transparent url(360-button-play.png) no-reoeat;
- background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAABoUlEQVR42sWVu2oCQRhGU/s8gpVYJeQJNkZSbiH4QNuLlQZS21sJayGYaOEFVFDxNiremj9zig2uzk5YQpKFg8PMd75ZZle9E5Ff4e+Ll8tlQuNoPI2vUcCYOdbIxCmm9F5T0YgNMmS/LebSwWdNa7VayXq9ls1mI9vtVna7nQBj5lgjQxYHN7KY3QkiUbDf7+V4PMrpdArBHGtkyOJc3/n1mVaUUl+F5/PZSrABDi4dpmKH3QkixQEHlw5TsccZmsRCoSD1et1ajkuHqdg/HA5GKZPJCOTzeanVasYMLh2mYsXDIGAoDuG6rlSr1WCdBxrcsTIWazgrQiHS6bSRYJ3XDzeq2O/3+9Ltdm9IpVIhstmslEqlUAY36ii8ZrMpjUbjhmQyKeA4jhSLRWMGN+rhOZ1Oh8ANuVxOyuUy40hwo163RK/XeyPQbrdjgYNr/ILAYDB41Gf1wZnFAQfX+iM0HA5fxuPx+2g0Ej22QoYsDq61mGsymTxMp9NX/Sk2yJDFsRZfXpzXbDZ7WiwW3nw+9zUKGDPHGpkL5V//mn7OJyJZApyzeUS5AAAAAElFTkSuQmCC);
- *background-image: url(360-button-play.png);
+ background:transparent url(../images/disk1.png) no-reoeat;
+ background-image: url(../images/disk1.png);
+ *background-image: url(../images/disk1.png);
  background-repeat: no-repeat;
+}
+.sm2-360btn{
+   box-shadow: 2px 2px 10px rgb(136, 23, 125);
+   animation: rotationDisque 7s linear infinite;
 }
 
 .ui360 {
@@ -590,14 +603,14 @@ adapté le css, notamment avec de la transparence */
 
 .ui360 .sm2-360btn-default:hover,
 .ui360 .sm2-360ui.sm2_paused .sm2-360btn:hover {
- background:transparent url(360-button-play-light.png) no-repeat 50% 50%;
+ background:transparent url(../images/disk1.png) no-repeat 50% 50%;
  _background:transparent url(360-button-play.gif) no-repeat 50% 50%;
  cursor:pointer;
 }
 
 .ui360 .sm2-360ui.sm2_playing .sm2-360btn:hover,
 .ui360 .sm2-360btn-playing:hover {
- background:transparent url(360-button-pause-light.png) no-repeat 50% 50%;
+ background:transparent url(../images/disk1.png) no-repeat 50% 50%;
  _background:transparent url(360-button-pause-light.gif) no-repeat 50% 50%;
  cursor:pointer;
 }

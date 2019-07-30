@@ -11,25 +11,12 @@ body{
 
 #container{
     margin: 0px auto;
-    padding-top: 5.5vh;
+    padding-top: 1.5vh;
     width: 75%;
     overflow: hidden;
     /* me sert pour centrer mon image et avoir la bordure extérieure du header AT*/
     }
 
-img.responsive_logo{
-    display: block;
-    margin-top: 2vh;
-    margin-right: auto;
-    margin-left: auto;
-    /*centrer mon bandeau avec les deux margin dans le container*/
-    max-width: 99%;
-    /* Si 100%, bordure droite n'apparait pas */
-    height: auto;
-    /* solution pour une image responsive trouvée ici
-    https://openclassrooms.com/forum/sujet/css-responsive-modifier-la-taille-des-images
-    beaucoup moins compliquée et longue que de faire différents formats d' images et demander au navigateur de choisir */
-}
 .image_responsive{
   background-size: cover;
 }
@@ -81,22 +68,24 @@ img.responsive_logo{
 /* *******************************lecteur JS************************************************** */
  /******************* trouvé sur codepen https://codepen.io/abhijit_mishra/pen/zZzNBr ************************************/
 
- .barre_lecteur{
-   position: fixed;
-   padding: 0!important;
- }
  .lecteur_mp3{
    /* margin-left: 20vw; */
-   background-color: rgb(29, 1, 29);
-   box-shadow: 2px 2px 20px #9f68af;
-   margin-bottom: 5vh;
+   background-color: rgb(31, 0, 31);
+   box-shadow: 1px 1px 5px #e9bdf7;
+   border: 1.5mm groove rgba(170, 50, 220, .6);
+   border-radius: 3%;
    font-size: .9rem;
-   color: #9f68af;
+   color: #e9bdf7;
+   height: 18vh;
+ }
+ .lecteur_mp3 span{
+   font-size: 1.1rem;
+   color: #e9bdf7;
+   text-shadow: 1px 1px 2px rgb(247, 191, 247) !important;
  }
 
- .lecteur_mp3 a span{
-   font-size: 1.1rem;
-   color: #9f68af;
+ .lecteur_mp3 .title_tracks{
+   font-weight: bold;
  }
 /**
  * SoundManager 2 + useFlashBlock
@@ -397,7 +386,7 @@ img.responsive_logo{
 
 }
 .sm2-360btn{
-   box-shadow: 0px 1px 10px rgba(253, 252, 252, 0.548);
+   box-shadow: 0px 2px 10px rgb(253, 252, 252);
    animation: rotationDisque 7s linear infinite;
 }
 

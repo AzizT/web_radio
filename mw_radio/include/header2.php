@@ -11,6 +11,9 @@ require_once("../include/init.php");
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MW Radio Albums</title>
 
+    <!-- link pour le favicon -->
+    <link rel="icon" type="image/png" href="../logo.png" />
+
     <!-- link bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 

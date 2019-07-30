@@ -11,6 +11,7 @@ require_once("include/init.php");
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+        <!-- link pour le favicon -->
         <link rel="icon" type="image/png" href="logo.png" />
 
         <!-- link bootstrap -->
@@ -27,45 +28,57 @@ require_once("include/init.php");
 </head>
 
 <body>
+        <!-- je crée un container au comportement "Bootstrap" pour mon lecteur mp3 + logo -->
+        <div class="container">
+
+                <!-- une row pour mon lecteur et pour mon logo -->
+                <div class="row mt-4">
+
+                        <?php
+                        $resultat = $bdd->prepare("SELECT * FROM track as t, album as a WHERE a.id = t.idAlbum ORDER BY RAND()");
+                        $resultat->execute();
+                        $tracks = $resultat->fetch(PDO::FETCH_ASSOC);
+                        ?>
+
+                        <!-- la section qui va accueillir le lecteur mp3 -->
+                        <section class="col-md-5 lecteur_mp3">
+
+                                
 
 
-        <section class="container-fluid barre_lecteur">
 
-                <?php
-                $resultat = $bdd->prepare("SELECT * FROM track as t, album as a WHERE a.id = t.idAlbum ORDER BY RAND()");
-                $resultat->execute();
-                $tracks = $resultat->fetch(PDO::FETCH_ASSOC);
-                ?>
-
-                <!-- la section qui va accueillir le lecteur mp3 -->
-                <section class="lecteur_mp3">
-
-                        <!-- une row par titre -->
-                        <div class="row col-md-12 ">
-
-                                <!-- première colonne pour le titre -->
-                                <div class="col-md-6 pt-3">
-                                        <span><?php echo $tracks['interprete']; ?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $tracks['title']; ?></span>
-                                </div>
 
                                 <!-- deuxieme colonne pour le lecteur -->
-                                <div class="">
+                                <div class="row pt-2 pl-2">
                                         <div id="sm2-container"></div>
-                                        <div class="song ui360 exclude button-exclude inline-exclude"><a href="mp3/<?php echo $tracks['mp3'] ?>"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $tracks['name']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <?php echo $tracks['annee']; ?></span></a></div>
+                                        <div class="song ui360 exclude button-exclude inline-exclude"><a href="mp3/<?php echo $tracks['mp3'] ?>"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $tracks['interprete']; ?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- <?php echo $tracks['annee']; ?></span></a></div>
                                 </div>
 
+                                <div class="row pt-2 pl-2"><span class="title_tracks"><?php echo $tracks['title']; ?></span></div>
+                                <div class="row pt-2 pl-2"><span class="titre_album"><?php echo $tracks['name']; ?></span></div>
+
+
+
+
+                                <!-- fermeture de row -->
+
+                        </section>
+                        <!-- ******************************************fin du lecteur mp3***************************** -->
+
+                        <!-- ******************************************début du logo*************************************** -->
+                        <div class="col-md-2 offset-2">
+
+                                <img src="images/logo_bandeau.png" alt="bandeau mw radio" class="" />
 
                         </div>
-                        <!-- fermeture de row -->
 
-                </section>
-                <!-- ******************************************fin du lecteur mp3***************************** -->
-
-
+                        <!-- *****************************************fin du logo************************************************* -->
 
                 </div>
 
-        </section>
+        </div>
+
+        <!-- je sors du container "bootstrap" pour désormais avoir un #container parametré dans mon css -->
 
         <div id="container">
 
@@ -73,11 +86,9 @@ require_once("include/init.php");
 
 
 
-                        <div class="row">
 
-                                <img src="images/logo_bandeau.png" alt="bandeau mw radio" class="responsive_logo" />
 
-                        </div>
+
 
                         <!-- début de ma navbar, insérée dans une row -->
 
