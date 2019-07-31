@@ -56,7 +56,8 @@
             }
             $data_insert->execute();
 
-            header("Location: connexion_membre.php?action=validate");
+        //    header("Location: connexion_membre.php?action=validate");
+        header("Location: connexion_membre.php");
         }
         
 
