@@ -19,9 +19,14 @@ define("URL", "http://localhost/web_radio/mw_radio/");
 // cette constante servira entre autre a enregistrer l' URL d' une photo / image dans la bdd. On ne conserve jamais la photo en elle même, ce serait trop lourd pourla bdd
 
 // *********************************************qlq variables*************************************************
-$error1 = '';
 $error = '';
-// message d' erreur
+$error1 = '';
+$error2 = '';
+$error3 = '';
+$error4 = '';
+$error5 = '';
+$error6 = '';
+// messages d' erreurs
 $validate = '';
 // message de validation
 $content = '';

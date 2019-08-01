@@ -23,7 +23,7 @@ body{
 /* début des parametres pour la nav bootstrap et la barre de recherche */
 
 .navbar .btn{
-  background: #09000e !important;
+  background: linear-gradient(to bottom right, rgb(10, 0, 10), rgb(49, 0, 49)) !important;
   color: #9f68af !important;
   font-size: .75rem;
   border: 1px solid #9f68af !important;
@@ -70,7 +70,7 @@ body{
 
  .lecteur_mp3{
    /* margin-left: 20vw; */
-   background-color: rgb(10, 0, 10);
+   background: linear-gradient(to bottom right, rgb(10, 0, 10), rgb(73, 1, 73));
    box-shadow: 1px 1px 5px #e9bdf7;
    border: 1.5mm groove rgba(170, 50, 220, .6);
    border-radius: 3%;
