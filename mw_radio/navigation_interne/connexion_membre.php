@@ -9,7 +9,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'deconnexion')
 {
     unset($_SESSION);
     session_destroy();
-    header('location:../accueil.php');
+    header('location:../index.php');
 }
 
 
@@ -42,7 +42,7 @@ if ($_POST) {
         echo '</pre>';
         // on crée donc un nouvel if else
 
-        // if(password_verify($mdp, $membre['mdp']))
+        // if(password_verify($password, $membre['mdp']))
         // si on hash le mdp, nous aurons besoin de password_verify car il permet de comparer une clé de hashage a un string
 
 

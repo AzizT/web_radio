@@ -45,7 +45,7 @@ require_once("../include/init.php");
                     <?php if (internauteEstConnecte()) : ?>
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="../accueil.php"><button class="btn btn-sm btn-outline-success home-button" type="button">Accueil MW Radio</button></a>
+                            <a class="nav-link" href="../index.php"><button class="btn btn-sm btn-outline-success home-button" type="button">Accueil MW Radio</button></a>
                         </li>
 
                         <li class="nav-item ">
@@ -76,7 +76,7 @@ require_once("../include/init.php");
                     <?php else : ?>
 
                         <li class="nav-item ">
-                            <a class="nav-link" href="../accueil.php"><button class="btn btn-sm btn-outline-success home-button" type="button">Accueil MW Radio</button></a>
+                            <a class="nav-link" href="../index.php"><button class="btn btn-sm btn-outline-success home-button" type="button">Accueil MW Radio</button></a>
                         </li>
 
                         <li class="nav-item ">

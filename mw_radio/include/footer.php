@@ -16,7 +16,7 @@
         <div class="row">
 
             <div class="col-md-1 logo_footer">
-            <a href="../accueil.php"><img src="../images/disk.png" alt="logo MW Radio"/></a>
+            <a href="../index.php"><img src="../images/disk.png" alt="logo MW Radio"/></a>
             </div>
 
             <nav class="col-md-10 liens_footer">
