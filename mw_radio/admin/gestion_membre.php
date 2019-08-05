@@ -27,35 +27,35 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 }
 
 // **********************AJOUT/ MODIFICATION MEMBRE*******************************
+if ($_POST) {
 
+    if (isset($_GET['action']) && $_GET['action'] == 'ajout') {
+        $membre_insert = $bdd->prepare("INSERT INTO membre(nom, prenom ,pseudo, email, mdp, statut) VALUES (:nom, :prenom , :pseudo, :email, :mdp, :statut)");
 
-if(isset($_GET['action']) && $_GET['action'] == 'ajout')
-{
-$membre_insert = $bdd->prepare("INSERT into membre(nom, prenom ,pseudo, email, mdp, statut) VALUES(:nom, :prenom , :pseudo, :email, :mdp, :statut)");
+        // $membre_insert->bindValue(":nom", $nom, PDO::PARAM_STR);
+        // $membre_insert->bindValue(":prenom", $prenom, PDO::PARAM_STR);
+        // $membre_insert->bindValue(":pseudo", $pseudo, PDO::PARAM_STR);
+        // $membre_insert->bindValue(":email", $email, PDO::PARAM_STR);
+        // $membre_insert->bindValue(":mdp", $mdp, PDO::PARAM_STR);
+        // $membre_insert->bindValue(":statut", $statut, PDO::PARAM_INT);
 
-$_GET['action'] = 'affichage';
+        $_GET['action'] = 'affichage';
 
-$validate .= "<div class='alert alert-success col-md-6 offset-md-3 text-center'>Le membre <strong>$nom</strong> a bien été ajouté !!</div>";
+        $validate .= "<div class='alert alert-success col-md-6 offset-md-3 text-center'>Le membre <strong>$nom</strong> a bien été ajouté !!</div>";
+    } else {
+        $membre_insert = $bdd->prepare("UPDATE membre SET nom = :nom, prenom = :prenom, pseudo = :pseudo, email = :email, mdp = :mdp, statut = :statut WHERE id = $id ");
 
-}else{
-$membre_insert = $bdd->prepare("UPDATE membre SET nom = :nom, prenom = :prenom, pseudo = :pseudo, email = :email, mdp = :mdp, statut = :statut WHERE id = $id ");
+        $_GET['action'] = 'affichage';
 
-$_GET['action'] = 'affichage';
+        $validate .= "<div class='alert alert-success col-md-6 offset-md-3 text-center'>Le membre n° <strong>$id</strong> a bien été modifié !!</div>";
+    }
+    foreach ($_POST as $key => $value) {
 
-$validate .= "<div class='alert alert-success col-md-6 offset-md-3 text-center'>Le membre n° <strong>$id</strong> a bien été modifié !!</div>";
+        $membre_insert->bindValue(":$key", $value, PDO::PARAM_STR);
+    }
+
+    $membre_insert->execute();
 }
-foreach ($_POST as $key => $value) {
-
-if ($key != 'photo_actuelle') {
-
-$produit_insert->bindValue(":$key", $value, PDO::PARAM_STR);
-}
-}
-
-$produit_insert->bindValue(":photo", $photo_bdd, PDO::PARAM_STR);
-
-$produit_insert->execute();
-
 ?>
 <!-- LIEN membres -->
 
@@ -153,11 +153,11 @@ $produit_insert->execute();
 
     $prenom = (isset($membre_actuel['prenom'])) ? $membre_actuel['prenom'] : '';
 
-    $username = (isset($membre_actuel['username'])) ? $membre_actuel['username'] : '';
+    $pseudo = (isset($membre_actuel['pseudo'])) ? $membre_actuel['pseudo'] : '';
 
     $email = (isset($membre_actuel['email'])) ? $membre_actuel['email'] : '';
 
-    $password = (isset($membre_actuel['password'])) ? $membre_actuel['password'] : '';
+    $mdp = (isset($membre_actuel['mdp'])) ? $membre_actuel['mdp'] : '';
 
     $statut = (isset($membre_actuel['statut'])) ? $membre_actuel['statut'] : '';
     ?>
@@ -183,8 +183,8 @@ $produit_insert->execute();
         <!-- le pseudo -->
 
         <div class="form-group col-md-2 mx-auto">
-            <label for="username">Pseudo</label>
-            <input type="text" class="form-control" id="username" name="username" placeholder="...">
+            <label for="pseudo">Pseudo</label>
+            <input type="text" class="form-control" id="pseudo" name="pseudo" placeholder="...">
         </div>
 
         <!-- le mail -->
@@ -198,8 +198,8 @@ $produit_insert->execute();
 
             <!-- mdp -->
             <div class="form-group col-md-2 offset-md-4">
-                <label for="password">Mot De Passe</label>
-                <input type="text" class="form-control" id="password" name="password" placeholder="...">
+                <label for="mdp">Mot De Passe</label>
+                <input type="text" class="form-control" id="mdp" name="mdp" placeholder="...">
             </div>
 
         </div>

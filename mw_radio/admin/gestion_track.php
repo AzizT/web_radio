@@ -85,7 +85,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
                     <?php else : ?>
 
-                        <td><audio src="../mp3/<?= $value ?>"></audio></td>
+                        <td><audio src="../mp3/<?= $value ?>"></audio><?= $value ?></td>
 
                     <?php endif; ?>
 
@@ -178,7 +178,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
         </div>
 
         <div class="row">
-            
+
             <div class="form-group col-md-6">
 
                 <label for="mp3">MP3</label>
@@ -193,9 +193,9 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
                 <audio src="<?= $mp3 ?>" alt="<? $titre ?>">
 
-            <?php endif; ?>
+                <?php endif; ?>
 
-            <input type="hidden" id="mp3_actuel" name="mp3_actuel" value="<?= $mp3 ?>">
+                <input type="hidden" id="mp3_actuel" name="mp3_actuel" value="<?= $mp3 ?>">
 
         </div>
 
@@ -228,4 +228,4 @@ if (isset($_GET['action']) && $_GET['action'] == 'suppression') {
 
 
 <?php
-require_once("../include/footer.php");?>
+require_once("../include/footer.php"); ?>
